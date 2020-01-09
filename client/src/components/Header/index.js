@@ -1,15 +1,30 @@
 import React, { Component } from "react";
-import { Header, Image } from 'semantic-ui-react";
+import { Menu, Header, Image } from 'semantic-ui-react";
 
-class Header extends Component {
-  render(){
-    <div>
-      <Header as='h2'>
+export default class Header extends Component {
+  state = {}
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Menu>
         <img src="LOGO" class="ui circular image" />
-        <h2>Charity Match</h2>
-        <img src="USER IMAGE" class="ui circular image" />
-      </Header>
-    </div>
-};
-
-export default Header;
+        <Menu.Item header>Charity Match</Menu.Item>
+        <Menu.Item
+          name='aboutUs'
+          active={activeItem === 'aboutUs'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          name='charities'
+          active={activeItem === 'charities'}
+          onClick={this.handleItemClick}
+        />
+      <img src="USER IMAGE" class="ui circular image" />
+      </Menu>
+    )
+  }
+}
