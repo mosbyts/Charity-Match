@@ -37,5 +37,5 @@ db.Sequelize = Sequelize;
 module.exports = {
   db,
   User: require("./user"),
-  userData: require("./userData")
+  userCharityData: require("./userCharityData")
 };

@@ -1,10 +1,10 @@
 const mysql = require("mysql");
 var Sequelize = require('sequelize');
 
-const userData = {
+const userCharityData = {
     username,
     charityScore,
     charityMatches
 }
 
-module.exports = userData;
+module.exports = userCharityData;
