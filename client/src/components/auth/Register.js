@@ -9,7 +9,9 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       password2: "",
@@ -40,7 +42,9 @@ class Register extends Component {
     e.preventDefault();
 
     const newUser = {
-      name: this.state.name,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      username: this.state.username,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
@@ -69,19 +73,47 @@ class Register extends Component {
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
+            <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.firstName}
+                  error={errors.firstName}
+                  id="firstName"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.firstName
+                  })}
+                />
+                <label htmlFor="name">First Name</label>
+                <span className="red-text">{errors.firstName}</span>
+              </div>
+            <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.lastName}
+                  error={errors.lastName}
+                  id="lastName"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.lastName
+                  })}
+                />
+                <label htmlFor="name">Last Name</label>
+                <span className="red-text">{errors.lastName}</span>
+              </div>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
+                  value={this.state.username}
+                  error={errors.username}
+                  id="username"
                   type="text"
                   className={classnames("", {
-                    invalid: errors.name
+                    invalid: errors.username
                   })}
                 />
-                <label htmlFor="name">Name</label>
-                <span className="red-text">{errors.name}</span>
+                <label htmlFor="name">Username</label>
+                <span className="red-text">{errors.username}</span>
               </div>
               <div className="input-field col s12">
                 <input
