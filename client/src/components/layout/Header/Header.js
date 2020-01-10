@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Menu, Image } from 'semantic-ui-react';
 
-class cmHeader extends Component {
+class CMHeader extends Component {
   state = {}
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -29,4 +30,4 @@ class cmHeader extends Component {
   }
 }
 
-export default cmHeader;
+export default CMHeader;
