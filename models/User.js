@@ -1,32 +1,53 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// module.exports = function(sequelize, DataTypes) {
+//   var User = sequelize.define("User", {
+//     firstName: {
+//       type: DataTypes.STRING,
+//       allowNull: true
+//       // validate: {
+//       //   len: [1]
+//       // }
+//     },
+//     lastName: {
+//       type: DataTypes.STRING,
+//       allowNull: true
+//     },
+//     email: {
+//       type: DataTypes.STRING,
+//       allowNull: false
+//       // validate: {
+//       //   len: [1]
+//       // }
+//     },
+//     userName: {
+//       type: DataTypes.STRING,
+//       allowNull: false
+//       // validate: {
+//       //   len: [1]
+//       // }
+//     },
+//     userPassword: {
+//       type: DataTypes.STRING,
+//       allowNull: false
+//       // validate: {
+//       //   len: [1]
+//       // }
+//     },
+//     preferenceId: {
+//       type: DataTypes.INTEGER,
+//       allowNull: true
+//       // validate: {
+//       //   len: [1]
+//       // }
+//     },
+//   });
 
-// Create Schema
-const UserSchema = new Schema({
-  firstName:{
-    type: String,
-    required: true
-  },
-  lastName:{
-    type: String,
-    required: true
-  },
-    username: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  }
-});
+//   User.associate = function(models) {
+//     // Associating Author with Posts
+//     // When an Author is deleted, also delete any associated Posts
+//     User.hasMany(models.Preferences, {
+//       onDelete: "cascade"
+//     });
+//   };
 
-module.exports = User = mongoose.model("users", UserSchema);
+//   return User;
+// };

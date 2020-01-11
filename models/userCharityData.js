@@ -1,10 +1,21 @@
-const mysql = require("mysql");
-var Sequelize = require('sequelize');
+var mysql = require("mysql");
+// var inquirer = require("inquirer");
 
-const userCharityData = {
-    username,
-    charityScore,
-    charityMatches
-}
+var connection = mysql.createConnection({
+  host: "localhost",
 
-module.exports = userCharityData;
+  // Your port; if not 3306
+  port: 3306,
+
+  // Your username
+  user: "root",
+
+  // Your password
+  password: "password",
+  database: "charityMatch_DB"
+});
+
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("connected as id " + connection.threadId);
+});
