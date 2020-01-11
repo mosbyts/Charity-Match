@@ -1,12 +1,12 @@
 //Necessary dependencies---------------------------------------------------------
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const mysql = require('mysql');
+// const mysql = require('mysql');
 var db = require("./models");
 const multer = require("multer");
 const cors = require("cors");
@@ -79,7 +79,7 @@ const connection = mysql.createConnection({
   });
 // Routes------------------------------------------------------------------------
 
-  db.sequelize.sync().then(function(){
+db.sequelize.sync().then(function(){
     app.listen(PORT, function() {
       console.log(`🌎 ==> API server now on port ${PORT}!`);
     });
