@@ -1,8 +1,10 @@
-import React from 'react'
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Header, Icon, Modal } from 'semantic-ui-react';
+import LoginModal from "../Log In Modal/index";
 
 const SignUpModal = () => (
-  <Modal trigger={<Button>Sign Up</Button>} closeIcon>
+  <Modal>
     <Header icon='archive' content='Archive Old Messages' />
     <Modal.Content>
       <h2>
@@ -20,6 +22,9 @@ const SignUpModal = () => (
     <Modal.Actions>
       <Button color='green'>
         <Icon name='signup' /> Sign Up
+      </Button>
+      <Button color='blue'>
+        <Icon name='login' />Log In
       </Button>
     </Modal.Actions>
   </Modal>

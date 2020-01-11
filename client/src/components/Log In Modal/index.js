@@ -1,8 +1,8 @@
-import React from 'react'
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
+import React from 'react';
+import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 
-const SignUpModal = () => (
-  <Modal trigger={<Button>Log In</Button>} closeIcon>
+const LoginModal = () => (
+  <Modal>
     <Header icon='archive' content='Archive Old Messages' />
     <Modal.Content>
       <h2>
@@ -15,10 +15,13 @@ const SignUpModal = () => (
     </Modal.Content>
     <Modal.Actions>
       <Button color='green'>
-        <Icon name='signup' /> Log In
+        <Icon name='login' /> Log In
+      </Button>
+      <Button color='blue'>
+        <Icon name='signup'/>Sign Up
       </Button>
     </Modal.Actions>
   </Modal>
 )
 
-export default SignUpModal
+export default LoginModal
