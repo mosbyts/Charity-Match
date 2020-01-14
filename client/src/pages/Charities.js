@@ -1,50 +1,40 @@
 import React, { Component } from "react";
+import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
-import NavBar from "../components/layout/Navbar/Navbar";
-import Footer from "../components/layout/Footer/Footer";
-// import CharityList from "../components/CharityList";
-// import ResultsList from "../components/resultList/resultList";
 
 class Charities extends Component {
-  // state = {
-  //   charityName: "",
-  //   tagLine: "",
-  //   mission: ""
-  // };
+
   state = {
     charities: []
   }
 
   // When the component mounts, run function
   componentDidMount() {
-    // this.showMatches();
     this.showRandom();
   }
 
   showRandom = () => {
     API.getRandomCharity().then(res => this.setState({charities: res.data}))
   }
-  // showMatches = (charityMatch) => {
-  //   API.getCharityMatch;
-  //   const charityMatch = [];
-  // }
 
   render() {
-    return (
+    if (this.state.fetching) {
+      return <div>Loading...</div>
+    } else return (
       <div>
-        <NavBar />
-        {/* <CharityList /> */}
-        {/* <ResultsList>
+        <Grid celled>
+          <Grid.Row>
           {this.state.charities.map(charities => (
-            <p>{charities.charityName}</p>
+            <h4>{charities.charityName}</h4>
           ))}
-        </ResultsList> */}
-        <div>
           {this.state.charities.map(charities => (
-            <p>{charities.charityName}</p>
+            <h5>{charities.tagLine}</h5>
           ))}
-        </div>
-        <Footer />
+          {this.state.charities.map(charities => (
+            <p>{charities.mission}</p>
+          ))}
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }

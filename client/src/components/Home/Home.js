@@ -1,32 +1,33 @@
 import React from 'react'
 import { Grid, Image } from 'semantic-ui-react'
+import "./style.css"
 
 const Homepage = () => (
   <div>
-    //PARALLAX IMAGE OF CHILDREN HERE.
-    <h2>Popular Charities</h2>
+    <div class="parallax"></div>
+    <h2 className="ui center aligned header">Popular Charities</h2>
     <Grid relaxed columns={3}>
       <Grid.Row>
         <Grid.Column>
-          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /><a>
+          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /></a>
         </Grid.Column>
         <Grid.Column>
-          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /><a>
+          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /></a>
         </Grid.Column>
         <Grid.Column>
-          <a href="CHARITY LINK"><Image src='/CHARITY LOGO' /><a>
+          <a href="CHARITY LINK"><Image src='/CHARITY LOGO' /></a>
         </Grid.Column>
       </Grid.Row>
 
       <Grid.Row>
         <Grid.Column>
-          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /><a>
+          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /></a>
         </Grid.Column>
         <Grid.Column>
-          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /><a>
+          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /></a>
         </Grid.Column>
         <Grid.Column>
-          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /><a>
+          <a href="CHARITY LINK"><Image src='CHARITY LOGO' /></a>
         </Grid.Column>
       </Grid.Row>
     </Grid>
