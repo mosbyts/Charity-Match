@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
-<<<<<<< HEAD
-=======
 import { Container, Divider } from 'semantic-ui-react'
 import NavBar from "../components/layout/Navbar/Navbar";
 import Footer from "../components/layout/Footer/Footer";
 // import CharityList from "../components/CharityList";
 import CharityMap from '../components/Map/map';
 import ResultsList from "../components/resultList/resultList";
->>>>>>> working on charity's map.js
 
 class Charities extends Component {
 
@@ -31,8 +28,6 @@ class Charities extends Component {
   showRandom = () => {
     API.getRandomCharity().then(res => this.setState({charities: res.data}));
   }
-<<<<<<< HEAD
-=======
 
   getGeoCode = () => {
     this.state.charities.slice(0, 10).map(charities => {   
@@ -41,14 +36,12 @@ class Charities extends Component {
   };
 
   // geocode = [37.531817, -77.4279688];
->>>>>>> working on charity's map.js
 
   render() {
     if (this.state.fetching) {
       return <div>Loading...</div>
     } else return (
       <div>
-<<<<<<< HEAD
         <Grid celled>
           <Grid.Row>
           {this.state.charities.map(charities => (
@@ -62,7 +55,6 @@ class Charities extends Component {
           ))}
           </Grid.Row>
         </Grid>
-=======
         <NavBar />
         <Container textAlign='center'>
           {/* <CharityMap 
@@ -83,7 +75,6 @@ class Charities extends Component {
           </ResultsList>
         </Container>
         <Footer />
->>>>>>> working on charity's map.js
       </div>
     );
   }
