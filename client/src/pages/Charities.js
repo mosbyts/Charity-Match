@@ -1,11 +1,22 @@
 import React, { Component } from "react";
 import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
+<<<<<<< HEAD
+=======
+import { Container, Divider } from 'semantic-ui-react'
+import NavBar from "../components/layout/Navbar/Navbar";
+import Footer from "../components/layout/Footer/Footer";
+// import CharityList from "../components/CharityList";
+import CharityMap from '../components/Map/map';
+import ResultsList from "../components/resultList/resultList";
+>>>>>>> working on charity's map.js
 
 class Charities extends Component {
 
   state = {
-    charities: []
+    charities: [], 
+    geocodeLat: [],
+    geocodeLong: []
   }
 
   // When the component mounts, run function
@@ -13,15 +24,31 @@ class Charities extends Component {
     this.showRandom();
   }
 
-  showRandom = () => {
-    API.getRandomCharity().then(res => this.setState({charities: res.data}))
+  componentDidUpdate() {
+    this.getGeoCode();
   }
+
+  showRandom = () => {
+    API.getRandomCharity().then(res => this.setState({charities: res.data}));
+  }
+<<<<<<< HEAD
+=======
+
+  getGeoCode = () => {
+    this.state.charities.slice(0, 10).map(charities => {   
+      API.getGeocode(charities.mailingAddress.streetAddress1, charities.mailingAddress.city, charities.mailingAddress.stateOrProvince ).then(res => {this.setState({geocodeLat: res.data.results[0].geometry.location.lat, geocodeLong: res.data.results[0].geometry.location.lng})}/*this.setState({geocodeLat: res.results.geometry.location.lat, geocodeLong: res.results.geometry.location.lng})*/);
+    })
+  };
+
+  // geocode = [37.531817, -77.4279688];
+>>>>>>> working on charity's map.js
 
   render() {
     if (this.state.fetching) {
       return <div>Loading...</div>
     } else return (
       <div>
+<<<<<<< HEAD
         <Grid celled>
           <Grid.Row>
           {this.state.charities.map(charities => (
@@ -35,6 +62,28 @@ class Charities extends Component {
           ))}
           </Grid.Row>
         </Grid>
+=======
+        <NavBar />
+        <Container textAlign='center'>
+          {/* <CharityMap 
+            lat={this.geocode[0]} 
+            long={this.geocode[1]} 
+            center={this.geocode}
+          /> */}
+          <ResultsList>
+            {this.state.charities.slice(0, 10).map((charities, index) => (
+              // <p>{charities.charityName}</p>
+            // <p>`{charities.mailingAddress.streetAddress1} - {charities.mailingAddress.city} {charities.mailingAddress.stateOrProvince}`</p>
+              <CharityMap 
+                lat={this.geocodeLat[index]} 
+                long={this.geocodeLong[index]} 
+                center={[this.geocodeLat[index],this.getcodeLong[index]]}
+              />
+            ))}
+          </ResultsList>
+        </Container>
+        <Footer />
+>>>>>>> working on charity's map.js
       </div>
     );
   }
