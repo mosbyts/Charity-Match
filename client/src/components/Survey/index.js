@@ -1,38 +1,115 @@
 import React from 'react';
+import React, { Component } from 'react'
+import { Form } from 'semantic-ui-react'
 
-function Survey() {
+class Survey extends Components {
+    state = {}
+    handleChange = (e, { value }) => this.setState({ value })
+    
     return (
       <div>
           <div className="container">
-              <h2>Charity Match Survey</h2>
-                <form>
-                    <h4>Which charitable cause are you most interested in supporting?</h4>
-                        <input type="radio">Education</input>
-                        <input type="radio">Environment</input>
-                        <input type="radio">Health and Wellness</input>
-                        <input type="radio">Human Services and Welfare</input>
-                        <input type="radio">Wildlife</input>
-                    <h4>Question 2</h4>
-                        <input type="radio">Answer 1</input>
-                        <input type="radio">Answer 2</input>
-                        <input type="radio">Answer 3</input>
-                        <input type="radio">Answer 4</input>
-                    <h4>Question 3</h4>
-                        <input type="radio">Answer 1</input>
-                        <input type="radio">Answer 2</input>
-                        <input type="radio">Answer 3</input>
-                        <input type="radio">Answer 4</input>
-                    <h4>Question 4</h4>
-                        <input type="radio">Answer 1</input>
-                        <input type="radio">Answer 2</input>
-                        <input type="radio">Answer 3</input>
-                        <input type="radio">Answer 4</input>
-                    <h4>Question 5</h4>
-                        <input type="radio">Answer 1</input>
-                        <input type="radio">Answer 2</input>
-                        <input type="radio">Answer 3</input>
-                        <input type="radio">Answer 4</input>
-                </form>
+              <h2>Find your charity match!</h2>
+                <h5>Fill out the survey below.</h5>
+                <Form>
+                    <Form.Group>
+                        <label>Which charitable cause are you most interested in supporting?</label>
+                            <Form.radio
+                                label='Animals and Wildlife'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Community Development'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Education'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Environment'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Health and Wellness'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Human Services'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Research and Public Policy'
+                                value='XXX'
+                                checked={value === 'XXX'}
+                                onChange={this.handleChange}
+                            />
+                    </Form.Group>
+                    <Form.Group>
+                        <label>I want to help a fundraising only organization.</label>
+                            <Form.radio
+                                label='True'
+                                value='True'
+                                checked={value === 'TRUE'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='False'
+                                value='FALSE'
+                                checked={value === 'FALSE'}
+                                onChange={this.handleChange}
+                            />
+                    </Form.Group>
+                    <Form.Group>
+                        <label>Where will your organization operate?</label>
+                            <Form.radio
+                                label='Regionally'
+                                value='REGIONAL'
+                                checked={value === 'REGIONAL'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Nationally'
+                                value='NATIONAL'
+                                checked={value === 'NATIONAL'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='Internationally'
+                                value='INTERNATIONAL'
+                                checked={value === 'INTERNATIONAL'}
+                                onChange={this.handleChange}
+                            />
+                    </Form.Group>
+                    <Form.Group>
+                        <label>I would like an organization that is supported by the government.</label>
+                            <Form.radio
+                                label='True'
+                                value='True'
+                                checked={value === 'TRUE'}
+                                onChange={this.handleChange}
+                            />
+                            <Form.radio
+                                label='False'
+                                value='FALSE'
+                                checked={value === 'FALSE'}
+                                onChange={this.handleChange}
+                            />
+                    </Form.Group>
+                    <Form.Button>Submit</Form.Button>
+                </Form>
           </div>
       </div>
     )
