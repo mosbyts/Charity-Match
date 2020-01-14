@@ -25,7 +25,7 @@ This app was created to help connect people to non-profits and encouraging helpi
 
 ## For Developers
 Clone the game locally:
-    $ git clone https://github.com/mosbyts/Project3.git
+    $ git clone https://github.com/mosbyts/Charity-Match.git
 
 ## Credit
 This version of the app was created by Tianna Mosby and Pierre Randall. For questions, concerns or additional help please contact us on GitHub at mosbyts or VCUPierre.
