@@ -1,12 +1,11 @@
-import React from 'react';
 import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
 
-class Survey extends Components {
+export default class Survey extends Component {
     state = {}
     handleChange = (e, { value }) => this.setState({ value })
     
-    return (
+    return () {
       <div>
           <div className="container">
               <h2>Find your charity match!</h2>
@@ -112,7 +111,5 @@ class Survey extends Components {
                 </Form>
           </div>
       </div>
-    )
-};
+}
 
-export default Survey;
