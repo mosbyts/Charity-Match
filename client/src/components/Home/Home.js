@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Image } from 'semantic-ui-react'
 import "./style.css"
 
-const Homepage = () => (
+const Home = () => (
   <div>
     <div class="parallax"></div>
     <h2 className="ui center aligned header">Popular Charities</h2>
@@ -34,4 +34,4 @@ const Homepage = () => (
    </div>
 )
 
-export default Homepage;
+export default Home;

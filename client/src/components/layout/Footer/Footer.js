@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Grid, GridColumn } from 'semantic-ui-react';
 import './style.css';
+import About from "../../About/About";
+
+//Need to add routing to each list item.
 
 class Footer extends Component {
     render() {
@@ -12,7 +15,7 @@ class Footer extends Component {
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <h2>Learn More</h2>
                             <ul>
-                                <li target="#">About Us</li>
+                                <li target={About}>About Us</li>
                                 <li target="#">Contact Us</li>
                             </ul>
                     </Grid.Column>
