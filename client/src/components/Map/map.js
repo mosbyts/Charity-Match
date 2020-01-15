@@ -4,10 +4,6 @@ import { Icon } from 'semantic-ui-react';
  
 class CharityMap extends Component {
   static defaultProps = {
-    // center: {
-    //   lat: 37.53,
-    //   lng: -77.42
-    // },
     zoom: 11
   };
  
