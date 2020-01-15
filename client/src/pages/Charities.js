@@ -21,27 +21,28 @@ class Charities extends Component {
     this.showRandom();
   }
 
-  componentDidUpdate() {
-    this.getGeoCode();
-  }
+  // componentDidUpdate() {
+  //   this.getGeoCode();
+  // }
 
   showRandom = () => {
     API.getRandomCharity().then(res => this.setState({charities: res.data}));
   }
 
-  getGeoCode = () => {
-    this.state.charities.slice(0, 10).map(charities => {   
-      API.getGeocode(charities.mailingAddress.streetAddress1, charities.mailingAddress.city, charities.mailingAddress.stateOrProvince ).then(res => {this.setState({geocodeLat: res.data.results[0].geometry.location.lat, geocodeLong: res.data.results[0].geometry.location.lng})}/*this.setState({geocodeLat: res.results.geometry.location.lat, geocodeLong: res.results.geometry.location.lng})*/);
-    })
-  };
+  // getGeoCode = () => {
+  //   this.state.charities.slice(0, 10).map(charities => {   
+  //     API.getGeocode(charities.mailingAddress.streetAddress1, charities.mailingAddress.city, charities.mailingAddress.stateOrProvince ).then(res => {this.setState({geocodeLat: res.data.results[0].geometry.location.lat, geocodeLong: res.data.results[0].geometry.location.lng})}/*this.setState({geocodeLat: res.results.geometry.location.lat, geocodeLong: res.results.geometry.location.lng})*/);
+  //   })
+  // };
 
-  // geocode = [37.531817, -77.4279688];
+  geocode = [37.531817, -77.4279688];
 
   render() {
     if (this.state.fetching) {
       return <div>Loading...</div>
     } else return (
       <div>
+        <NavBar />
         <Grid celled>
           <Grid.Row>
           {this.state.charities.map(charities => (
@@ -55,7 +56,6 @@ class Charities extends Component {
           ))}
           </Grid.Row>
         </Grid>
-        <NavBar />
         <Container textAlign='center'>
           {/* <CharityMap 
             lat={this.geocode[0]} 
@@ -67,9 +67,12 @@ class Charities extends Component {
               // <p>{charities.charityName}</p>
             // <p>`{charities.mailingAddress.streetAddress1} - {charities.mailingAddress.city} {charities.mailingAddress.stateOrProvince}`</p>
               <CharityMap 
-                lat={this.geocodeLat[index]} 
-                long={this.geocodeLong[index]} 
-                center={[this.geocodeLat[index],this.getcodeLong[index]]}
+                // lat={this.geocodeLat[index]} 
+                // long={this.geocodeLong[index]} 
+                // center={[this.geocodeLat[index],this.getcodeLong[index]]}
+                lat={this.geocode[0]} 
+                long={this.geocode[1]} 
+                center={this.geocode}
               />
             ))}
           </ResultsList>
