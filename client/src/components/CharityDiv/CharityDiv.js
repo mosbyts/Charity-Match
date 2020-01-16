@@ -3,8 +3,6 @@ import Charities from '../../pages/Charities';
 import API from "../../utils/API";
 
 export default class CharityDiv extends Component {
-
-
     render(){
         return(
             <div>

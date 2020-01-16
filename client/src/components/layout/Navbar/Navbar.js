@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Grid, Image } from 'semantic-ui-react';
 import Logo from "./ntLogo.png";
 import "./style.css";
-import LoginModal from "../../Log In Modal";
+import Login from "../../auth/Login";
 
 class Navbar extends Component {
   render() {
@@ -20,7 +20,7 @@ class Navbar extends Component {
             </Grid.Column>
             <Grid.Column width={8}></Grid.Column>
             <Grid.Column width={2}  className="padding">
-              <Button><Link to='/login' component={LoginModal}>Log In</Link></Button>
+              <Button><Link to='/login' component={Login}>Log In</Link></Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>

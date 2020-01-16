@@ -16,6 +16,7 @@ import Charities from "./pages/Charities";
 import About from "./components/About/About";
 
 import "./App.css";
+import Contact from "./components/Contact/Contact";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/charities" component={Charities} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
