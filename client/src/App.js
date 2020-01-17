@@ -13,6 +13,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Charities from "./pages/Charities";
 import About from "./components/About/About";
+import Privacy from "./components/Privacy/Privacy";
 
 import "./App.css";
 import Contact from "./components/Contact/Contact";
@@ -49,6 +50,7 @@ class App extends Component {
             <Route exact path="/charities" component={Charities} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/privacy" component={Privacy} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

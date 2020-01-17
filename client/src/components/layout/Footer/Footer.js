@@ -4,6 +4,9 @@ import { Grid, GridColumn } from 'semantic-ui-react';
 import './style.css';
 import About from "../../About/About";
 import Contact from "../../Contact/Contact";
+import Privacy from "../../Privacy/Privacy";
+import Terms from "../../Terms/Terms";
+import Login from "../../auth/Login";
 
 class Footer extends Component {
     render() {
@@ -22,15 +25,15 @@ class Footer extends Component {
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <h2>Contribute</h2>
                             <ul>
-                                <li target="#">Donate</li>
-                                <li target="#">Volunteer</li>
+                                <Link to="/donate" component={Login}><li>Donate</li></Link>
+                                <Link to="/volunteer" component={Login}><li>Volunteer</li></Link>
                             </ul>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <h2>Legal</h2>
                             <ul>
-                                <li target="#">Privacy</li>
-                                <li target="#">Terms and Conditions</li>
+                                <Link to="/privacy" component={Privacy}><li>Privacy</li></Link>
+                                <Link to="/terms" component={Terms}><li>Terms and Conditions</li></Link>
                             </ul>
                     </Grid.Column>
                     <Grid.Column mobile={8} tablet={4} computer={2}></Grid.Column>
