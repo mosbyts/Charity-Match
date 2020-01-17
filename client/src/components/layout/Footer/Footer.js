@@ -7,6 +7,7 @@ import Contact from "../../Contact/Contact";
 import Privacy from "../../Privacy/Privacy";
 import Terms from "../../Terms/Terms";
 import Login from "../../auth/Login";
+import Survey from "../../Survey/Survey";
 
 class Footer extends Component {
     render() {
@@ -20,6 +21,7 @@ class Footer extends Component {
                             <ul>
                                 <Link to="/about" component={About}><li>About Us</li></Link>
                                 <Link to="/contact" component={Contact}><li>Contact Us</li></Link>
+                                <Link to="/survey" component={Survey}><li>Survey</li></Link>
                             </ul>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
