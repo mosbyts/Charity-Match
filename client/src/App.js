@@ -7,7 +7,6 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Landing from "./components/layout/Landing/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -17,6 +16,7 @@ import About from "./components/About/About";
 
 import "./App.css";
 import Contact from "./components/Contact/Contact";
+import Landing from "./components/layout/Landing/Landing";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

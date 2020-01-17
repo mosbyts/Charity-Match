@@ -9,10 +9,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
 .searchDiv {
   background-color: lightgray;
   left: 0;
   right: 0;
+}
+
+.charityLogo{
+  height: 275px;
+  width: auto;
 }
