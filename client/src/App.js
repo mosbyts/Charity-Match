@@ -7,16 +7,17 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Landing from "./components/layout/Landing/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Charities from "./pages/Charities";
 import About from "./components/About/About";
+import Privacy from "./components/Privacy/Privacy";
 
 import "./App.css";
 import Contact from "./components/Contact/Contact";
+import Landing from "./components/layout/Landing/Landing";
 import Survey from "./components/Survey/Survey";
 
 // Check for token to keep user logged in
@@ -50,6 +51,7 @@ class App extends Component {
             <Route exact path="/charities" component={Charities} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/privacy" component={Privacy} />
             <Route exact path="/survey" component={Survey} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />

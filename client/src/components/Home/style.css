@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap');
+
 .parallax {
     background-image: url("./children.jpg");
   
@@ -9,10 +11,23 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
 .searchDiv {
   background-color: lightgray;
   left: 0;
   right: 0;
+}
+
+.charityLogo{
+  height: auto;
+  width: 300px;
+}
+
+.topPicks{
+  margin: 20px;
+}
+
+h2{
+  font-family: 'Arima Madurai', cursive;
 }
