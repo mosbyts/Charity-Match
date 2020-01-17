@@ -102,7 +102,7 @@ class Login extends Component {
                 </span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
+              <Link to="/dashboard"><button
                   style={{
                     width: "150px",
                     borderRadius: "3px",
@@ -113,7 +113,7 @@ class Login extends Component {
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
                   Login
-                </button>
+                </button></Link>
               </div>
             </form>
           </div>

@@ -156,7 +156,7 @@ class Register extends Component {
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
+                <Link to="/dashboard"><button
                   style={{
                     width: "150px",
                     borderRadius: "3px",
@@ -167,7 +167,7 @@ class Register extends Component {
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
                   Sign up
-                </button>
+                </button></Link>
               </div>
             </form>
           </div>
