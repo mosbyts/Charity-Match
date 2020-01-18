@@ -1,53 +1,24 @@
-// module.exports = function(sequelize, DataTypes) {
-//   var User = sequelize.define("User", {
-//     firstName: {
-//       type: DataTypes.STRING,
-//       allowNull: true
-//       // validate: {
-//       //   len: [1]
-//       // }
-//     },
-//     lastName: {
-//       type: DataTypes.STRING,
-//       allowNull: true
-//     },
-//     email: {
-//       type: DataTypes.STRING,
-//       allowNull: false
-//       // validate: {
-//       //   len: [1]
-//       // }
-//     },
-//     userName: {
-//       type: DataTypes.STRING,
-//       allowNull: false
-//       // validate: {
-//       //   len: [1]
-//       // }
-//     },
-//     userPassword: {
-//       type: DataTypes.STRING,
-//       allowNull: false
-//       // validate: {
-//       //   len: [1]
-//       // }
-//     },
-//     preferenceId: {
-//       type: DataTypes.INTEGER,
-//       allowNull: true
-//       // validate: {
-//       //   len: [1]
-//       // }
-//     },
-//   });
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-//   User.associate = function(models) {
-//     // Associating Author with Posts
-//     // When an Author is deleted, also delete any associated Posts
-//     User.hasMany(models.Preferences, {
-//       onDelete: "cascade"
-//     });
-//   };
+const userSchema = new Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: {type: String, required: true },
+  username: { type: String, required: true },
+  password: { type: String, required: true },
+  userCreated: {
+    type: Date,
+    default: Date.now
+  },
+  preferences: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "preferences"
+    }
+  ]
+});
 
-//   return User;
-// };
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
