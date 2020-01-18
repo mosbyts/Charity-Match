@@ -19,18 +19,24 @@
 }
 
 .topPicks{
+  color: #47B673;
   display: inline-block;
+  font-family: 'Arima Madurai', cursive;
   height: 650px;
-  margin: 50px;
+  margin: 60px;
 }
 
 .userOptions{
   background-color: #E7E7E7;
+  color: #47B673;
+  font-family: 'Arima Madurai', cursive;
   height: 600px;
 }
 
 .newsletter{
+  color: #47B673;
   display: inline-block;
+  font-family: 'Arima Madurai', cursive;
   height: 300px;
   margin: 50px;
 }

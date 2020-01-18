@@ -16,7 +16,7 @@ const Home = () => (
   <div>
     <div class="parallax"></div>
     <div className="topPicks">
-    <h1 className="ui center aligned header">Editor's Top Picks</h1>
+    <h1 className="center aligned">Editor's Top Picks</h1>
     <Grid relaxed verticalAlign='middle' columns={3}>
       <Grid.Row>
         <Grid.Column>
@@ -25,12 +25,12 @@ const Home = () => (
         </ScrollAnimation>
         </Grid.Column>
         <Grid.Column>
-        <ScrollAnimation animateIn='fadeIn'>
+        <ScrollAnimation animateIn='fadeIn' delay={450}>
           <a href="https://www.rebuildingtogether.org"><Image src={RTLogo} className="charityLogo" alt="Rebuilding Together Logo" /></a>
         </ScrollAnimation>
         </Grid.Column>
         <Grid.Column>
-        <ScrollAnimation animateIn='fadeIn'>
+        <ScrollAnimation animateIn='fadeIn' delay={950}>
           <a href="https://www.savethechildren.org"><Image src={STCLogo} className="charityLogo" alt="Save The Children Logo" /></a>
         </ScrollAnimation>
         </Grid.Column>
@@ -43,12 +43,12 @@ const Home = () => (
         </ScrollAnimation>
         </Grid.Column>
         <Grid.Column>
-        <ScrollAnimation animateIn='fadeIn'>
+        <ScrollAnimation animateIn='fadeIn' delay={450}>
           <a href="https://feedmore.org/"><Image src={FMLogo} className="charityLogo" alt="Feed More Logo" /></a>
         </ScrollAnimation>
         </Grid.Column>
         <Grid.Column>
-        <ScrollAnimation animateIn='fadeIn'>
+        <ScrollAnimation animateIn='fadeIn' delay={950}>
           <a href="https://techfortroops.org/"><Image src={TFTLogo} className="charityLogo" alt="Tech For Troops Logo" /></a>
         </ScrollAnimation>
         </Grid.Column>
@@ -56,6 +56,7 @@ const Home = () => (
     </Grid>
     </div>
     <Container fluid className="userOptions">
+    <h1 className="center aligned">How Can You Help?</h1>
       <Link to='/dashboard'>
         <Card.Group itemsPerRow={2}>
         <Card fluid>
@@ -83,7 +84,7 @@ const Home = () => (
       <Grid columns={1}>
         <Grid.Row>
           <Grid.Column>
-            <h1 className="ui center aligned header">Sign Up For Our Newsletter</h1>
+            <h1 className="center aligned">Sign Up For Our Newsletter</h1>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

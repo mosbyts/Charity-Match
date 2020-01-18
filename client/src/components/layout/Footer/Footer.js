@@ -43,7 +43,7 @@ class Footer extends Component {
                       <Grid.Row></Grid.Row>
                       <Grid.Row textAlign='center' columns={1}>
                           <GridColumn>
-                            Charity Match © 2020
+                            <p>Charity Match © 2020</p>
                           </GridColumn>
                       </Grid.Row>
                   </Grid>

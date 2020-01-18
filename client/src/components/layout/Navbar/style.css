@@ -6,7 +6,6 @@
 }
 
 h1{
-    color: #FF7367;
     font-family: 'Arima Madurai', cursive;
     padding-top: 15px;
 }
@@ -16,6 +15,7 @@ h1{
 }
 
 .padding{
+    color: #FF7367;
     padding-top: 15px;
 }
 
