@@ -12,14 +12,12 @@ This app was created to help connect people to non-profits and encouraging helpi
 
 ## Tech Used
 - Animate On Scroll (AOS)
-- Anime.js
 - Charity Navigator API
 - Express.js
 - Google Maps API
 - Heroku
-- MySQL/Sequelize
+- MongoDB/Mongoose
 - Node
-- Okta
 - React
 - Semantic UI
 

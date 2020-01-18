@@ -2,12 +2,10 @@
 
 .navbar{
     background-color: #E7E7E7;
-    height: 75px;
-    margin-bottom: 85px;
+    height: 85px;
 }
 
 h1{
-    color: #FF7367;
     font-family: 'Arima Madurai', cursive;
     padding-top: 15px;
 }
@@ -17,6 +15,7 @@ h1{
 }
 
 .padding{
+    color: #FF7367;
     padding-top: 15px;
 }
 

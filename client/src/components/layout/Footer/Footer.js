@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Grid, GridColumn } from 'semantic-ui-react';
+import { Divider, Grid, GridColumn } from 'semantic-ui-react';
 import './style.css';
 import About from "../../About/About";
 import Contact from "../../Contact/Contact";
 import Privacy from "../../Privacy/Privacy";
 import Terms from "../../Terms/Terms";
+import Dashboard from "../../dashboard/Dashboard";
 import Login from "../../auth/Login";
 import Survey from "../../Survey/Survey";
 
@@ -14,6 +15,7 @@ class Footer extends Component {
       return (
           <div>
               <footer>
+                <Divider hidden />
                 <Grid verticalAlign='middle'>
                    <Grid.Column mobile={8} tablet={4} computer={2}></Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
@@ -27,8 +29,8 @@ class Footer extends Component {
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <h2>Contribute</h2>
                             <ul>
-                                <Link to="/donate" component={Login}><li>Donate</li></Link>
-                                <Link to="/volunteer" component={Login}><li>Volunteer</li></Link>
+                                <Link to="/donate" component={Dashboard}><li>Donate</li></Link>
+                                <Link to="/volunteer" component={Dashboard}><li>Volunteer</li></Link>
                             </ul>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
@@ -41,9 +43,10 @@ class Footer extends Component {
                     <Grid.Column mobile={8} tablet={4} computer={2}></Grid.Column>
                 </Grid>
                   <Grid verticalAlign='middle'>
+                      <Grid.Row></Grid.Row>
                       <Grid.Row textAlign='center' columns={1}>
                           <GridColumn>
-                            Charity Match © 2020
+                            <p>Charity Match © 2020</p>
                           </GridColumn>
                       </Grid.Row>
                   </Grid>
