@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button, Grid, Image } from 'semantic-ui-react';
+import { Button, Divider, Grid, Image } from 'semantic-ui-react';
 import Logo from "./ntLogo.png";
 import "./style.css";
 import Login from "../../auth/Login";
@@ -20,7 +20,7 @@ class Navbar extends Component {
             </Grid.Column>
             <Grid.Column width={8}></Grid.Column>
             <Grid.Column width={2}  className="padding">
-              <Button><Link to='/login' component={Login}>Log In</Link></Button>
+              <Button><Link to='/dashboard' component={Login}>Log In</Link></Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -4,7 +4,7 @@
     background-image: url("./children.jpg");
   
     /* Set a specific height */
-    height: 500px;
+    height: 550px;
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -13,21 +13,25 @@
     background-size: cover;
 }
 
-.searchDiv {
-  background-color: lightgray;
-  left: 0;
-  right: 0;
-}
-
 .charityLogo{
   height: auto;
-  width: 300px;
+  width: 400px;
 }
 
 .topPicks{
-  margin: 20px;
+  display: inline-block;
+  height: 650px;
+  margin: 50px;
 }
 
-h2{
-  font-family: 'Arima Madurai', cursive;
+.userOptions{
+  background-color: #E7E7E7;
+  height: 600px;
 }
+
+.newsletter{
+  display: inline-block;
+  height: 300px;
+  margin: 50px;
+}
+
