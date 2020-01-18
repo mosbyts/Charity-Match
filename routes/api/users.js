@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const axios = require('axios');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
@@ -10,46 +11,65 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-router.post("/register", (req, res) => {
+// axios.post('/register')
+//   .then(function (response) {
+//     // handle success
+//     // console.log(response);
+//     return response.json;
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     // console.log(error);
+//     return error.json;
+//   })
+//   .finally(function () {
+//     // always executed
+//   });
+axios.post("/register", (req, res) => {
   // Form validation
+  // console.log(req.body);
+  return res.json(req.body);
 
-  const { errors, isValid } = validateRegisterInput(req.body);
+  // const { errors, isValid } = validateRegisterInput(req.body);
 
-  // Check validation
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
+  // // Check validation
+  // if (!isValid) {
+  //   return res.status(400).json(errors);
+  // }
+  // if(!email || !password) {
+  //   return res.status(400).json({ msg: 'Please enter all fields' });
+  // }
 
-  User.findOne({ email: req.body.email }).then(user => {
-    if (user) {
-      return res.status(400).json({ email: "Email already exists" });
-    } else {
-      const newUser = new User({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
-      });
+  // User.findOne({ email: req.body.email }).then(user => {
+  //   if (user) {
+  //     return res.status(400).json({ email: "Email already exists" });
+  //   } else {
+  //     const newUser = new User({
+  //       firstName: req.body.firstName,
+  //       lastName: req.body.lastName,
+  //       username: req.body.username,
+  //       email: req.body.email,
+  //       password: req.body.password
+  //     });
 
-      // Hash password before saving in database
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
-          if (err) throw err;
-          newUser.password = hash;
-          newUser
-            .save()
-            .then(user => res.json(user))
-            .catch(err => console.log(err));
-        });
-      });
-    }
-  });
+  //     // Hash password before saving in database
+  //     bcrypt.genSalt(10, (err, salt) => {
+  //       bcrypt.hash(newUser.password, salt, (err, hash) => {
+  //         if (err) throw err;
+  //         newUser.password = hash;
+  //         newUser
+  //           .save()
+  //           .then(user => res.json(user))
+  //           .catch(err => console.log(err));
+  //       });
+  //     });
+  //   }
+  // });
 });
 
 // @route POST api/users/login
