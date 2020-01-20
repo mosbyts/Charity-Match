@@ -1,4 +1,30 @@
-.div{
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap');
+
+.parallax {
+    background-image: url("");
+  
+    /* Set a specific height */
+    height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.privacyDiv {
+    height: 500px;
     margin: 20px;
-    padding: 20px;
+}
+
+.privacy{
+    color: #47B673;
+    font-family: 'Arima Madurai', cursive;
+    font-size: 40px;
+}
+
+.privacyInfo{
+    font-size: 25px;
+    font-family: 'Arima Madurai', cursive;
 }

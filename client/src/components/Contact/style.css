@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap');
+
 .parallax {
     background-image: url("./Animals.jpg");
   
@@ -9,4 +11,20 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.contactDiv {
+    height: 500px;
+    margin: 20px;
+}
+
+.contact{
+    color: #47B673;
+    font-family: 'Arima Madurai', cursive;
+    font-size: 40px;
+}
+
+.contactInfo{
+    font-size: 25px;
+    font-family: 'Arima Madurai', cursive;
 }

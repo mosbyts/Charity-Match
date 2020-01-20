@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap');
 
 .parallax {
-    background-image: url("./recycling.jpg");
+    background-image: url("");
   
     /* Set a specific height */
     height: 500px;
@@ -13,18 +13,18 @@
     background-size: cover;
 }
 
-.aboutDiv {
+.agreementDiv {
     height: 500px;
     margin: 20px;
 }
 
-.aboutUs{
+.agreement{
     color: #47B673;
     font-family: 'Arima Madurai', cursive;
     font-size: 40px;
 }
 
-.cmInfo{
+.agreementInfo{
     font-size: 25px;
     font-family: 'Arima Madurai', cursive;
 }

@@ -7,8 +7,9 @@ import Contact from "../../Contact/Contact";
 import Privacy from "../../Privacy/Privacy";
 import Terms from "../../Terms/Terms";
 import Dashboard from "../../dashboard/Dashboard";
-import Login from "../../auth/Login";
 import Survey from "../../Survey/Survey";
+import Agreement from "../../Agreement/Agreement";
+import Login from "../../auth/Login";
 
 class Footer extends Component {
     render() {
@@ -16,31 +17,33 @@ class Footer extends Component {
           <div>
               <footer>
                 <Divider hidden />
-                <Grid verticalAlign='middle'>
-                   <Grid.Column mobile={8} tablet={4} computer={2}></Grid.Column>
-                    <Grid.Column mobile={16} tablet={8} computer={4}>
+                <Grid container columns='equal' verticalAlign='middle'>
+                   <Grid.Column width={2}></Grid.Column>
+                    <Grid.Column width={4}>
                         <h2>Learn More</h2>
                             <ul>
                                 <Link to="/about" component={About}><li>About Us</li></Link>
                                 <Link to="/contact" component={Contact}><li>Contact Us</li></Link>
-                                <Link to="/survey" component={Survey}><li>Survey</li></Link>
+                                <Link to="/survey" component={Survey}><li>Take The Survey</li></Link>
                             </ul>
                     </Grid.Column>
-                    <Grid.Column mobile={16} tablet={8} computer={4}>
+                    <Grid.Column width={4}>
                         <h2>Contribute</h2>
                             <ul>
                                 <Link to="/donate" component={Dashboard}><li>Donate</li></Link>
                                 <Link to="/volunteer" component={Dashboard}><li>Volunteer</li></Link>
+                                <Link to="/charities"><li>View Charities</li></Link>
                             </ul>
                     </Grid.Column>
-                    <Grid.Column mobile={16} tablet={8} computer={4}>
+                    <Grid.Column width={4}>
                         <h2>Legal</h2>
                             <ul>
                                 <Link to="/privacy" component={Privacy}><li>Privacy</li></Link>
                                 <Link to="/terms" component={Terms}><li>Terms and Conditions</li></Link>
+                                <Link to="/agreement" component={Agreement}><li>User Agreement</li></Link>
                             </ul>
                     </Grid.Column>
-                    <Grid.Column mobile={8} tablet={4} computer={2}></Grid.Column>
+                    <Grid.Column width={2}></Grid.Column>
                 </Grid>
                   <Grid verticalAlign='middle'>
                       <Grid.Row></Grid.Row>
