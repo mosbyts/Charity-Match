@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream
 import { Button, Divider, Grid, Image } from 'semantic-ui-react';
+=======
+import { Button, Grid, Image, Icon } from 'semantic-ui-react';
+>>>>>>> Stashed changes
 import Logo from "./ntLogo.png";
 import "./style.css";
 import Login from "../../auth/Login";

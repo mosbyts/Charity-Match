@@ -14,6 +14,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Charities from "./pages/Charities";
 import About from "./components/About/About";
 import Privacy from "./components/Privacy/Privacy";
+import Terms from "./components/Terms/Terms";
+import Agreement from "./components/Agreement/Agreement";
 
 import "./App.css";
 import Contact from "./components/Contact/Contact";
@@ -51,6 +53,12 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/privacy" component={Privacy} />
+<<<<<<< Updated upstream
+=======
+            <Route exact path="/survey" component={Survey} />
+            <Route exact path="/terms" component={Terms} />
+            <Route exact path="/agreement" component={Agreement} />
+>>>>>>> Stashed changes
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

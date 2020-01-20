@@ -31,6 +31,7 @@
   color: #47B673;
   font-family: 'Arima Madurai', cursive;
   height: 600px;
+  padding: 40px;
 }
 
 .newsletter{
@@ -39,5 +40,13 @@
   font-family: 'Arima Madurai', cursive;
   height: 300px;
   margin: 50px;
+}
+
+.emailInput{
+  margin: 40px;
+}
+
+.inputBtn{
+  height: 67px;
 }
 

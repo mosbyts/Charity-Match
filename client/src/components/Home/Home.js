@@ -81,24 +81,9 @@ const Home = () => (
       </Link>
     </Container>
     <Container textAlign='center' className='newsletter'>
-      <Grid columns={1}>
-        <Grid.Row>
-          <Grid.Column>
-            <h1 className="center aligned">Sign Up For Our Newsletter</h1>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-            <h5>Get the latest info on your favorite charities and hear about our updates.</h5>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-            <Input placeholder='Type email address here...' /><Button primary>Sign Up</Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-
+      <h1 className="center aligned">Sign Up For Our Newsletter</h1>
+      <h5>Get the latest info on your favorite charities and hear about our updates.</h5>
+      <Input placeholder='Type email address here...' className='emailInput' /><Button primary className='inputBtn'>Sign Up</Button>
     </Container>
    </div>
 )
