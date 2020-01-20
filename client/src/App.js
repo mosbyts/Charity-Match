@@ -20,6 +20,7 @@ import Agreement from "./components/Agreement/Agreement";
 import "./App.css";
 import Contact from "./components/Contact/Contact";
 import Landing from "./components/layout/Landing/Landing";
+import Survey from "./components/Survey/Survey";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -53,12 +54,9 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/privacy" component={Privacy} />
-<<<<<<< Updated upstream
-=======
             <Route exact path="/survey" component={Survey} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/agreement" component={Agreement} />
->>>>>>> Stashed changes
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

@@ -7,11 +7,9 @@ import Contact from "../../Contact/Contact";
 import Privacy from "../../Privacy/Privacy";
 import Terms from "../../Terms/Terms";
 import Dashboard from "../../dashboard/Dashboard";
-<<<<<<< Updated upstream
-=======
 import Survey from "../../Survey/Survey";
 import Agreement from "../../Agreement/Agreement";
->>>>>>> Stashed changes
+import Login from "../../auth/Login";
 
 class Footer extends Component {
     render() {
@@ -26,10 +24,7 @@ class Footer extends Component {
                             <ul>
                                 <Link to="/about" component={About}><li>About Us</li></Link>
                                 <Link to="/contact" component={Contact}><li>Contact Us</li></Link>
-<<<<<<< Updated upstream
-=======
                                 <Link to="/survey" component={Survey}><li>Take The Survey</li></Link>
->>>>>>> Stashed changes
                             </ul>
                     </Grid.Column>
                     <Grid.Column width={4}>
