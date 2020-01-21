@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Container, Divider } from 'semantic-ui-react'
-import NavBar from "../components/layout/Navbar/Navbar";
 import Footer from "../components/layout/Footer/Footer";
 // import CharityList from "../components/CharityList";
 import CharityMap from '../components/Map/map';
-import ResultsList from "../components/resultList/resultList";
+//import ResultsList from "../components/resultList/resultList";
 import Navbar from "../components/layout/Navbar/Navbar";
 
 export default class Charities extends Component {
@@ -56,6 +54,7 @@ export default class Charities extends Component {
             {/* </ResultsList>
             </Container> */}
           )
+        <Footer />
       </div>
     )}
 }
