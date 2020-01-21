@@ -4,6 +4,10 @@ import Navbar from "../layout/Navbar/Navbar"
 import Footer from "../layout/Footer/Footer"
 
 export default class About extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render(){
         return(
             <div>

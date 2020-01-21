@@ -5,6 +5,10 @@ import Navbar from '../layout/Navbar/Navbar'
 import Footer from '../layout/Footer/Footer'
 
 export default class Agreement extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
     render() {
       return (
           <div>

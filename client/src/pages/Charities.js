@@ -17,6 +17,7 @@ export default class Charities extends Component {
 
   // When the component mounts, run function
   componentDidMount() {
+    window.scrollTo(0 , 0);
     this.showRandom();
   }
 

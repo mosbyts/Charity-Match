@@ -29,6 +29,10 @@ class Survey extends Component {
     
         this.setState({ subQuestion1: question1, subQuestion2: question2, subQuestion3: question3, subQuestion4: question4 })
     }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     
     render () {
     const {subQuestion1, subQuestion2, subQuestion3, subQuestion4} = this.state

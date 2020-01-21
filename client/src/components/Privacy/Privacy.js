@@ -5,6 +5,10 @@ import Navbar from '../layout/Navbar/Navbar'
 import Footer from '../layout/Footer/Footer'
 
 export default class Privacy extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
     render() {
       return (
           <div>
