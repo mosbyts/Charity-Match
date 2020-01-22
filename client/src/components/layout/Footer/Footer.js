@@ -20,6 +20,7 @@ class Footer extends Component {
                 <Grid container columns='equal' verticalAlign='middle'>
                    <Grid.Column width={2}></Grid.Column>
                     <Grid.Column width={4}>
+                        <br></br>
                         <h2>Learn More</h2>
                             <ul>
                                 <Link to="/about" component={About}><li>About Us</li></Link>
@@ -28,6 +29,7 @@ class Footer extends Component {
                             </ul>
                     </Grid.Column>
                     <Grid.Column width={4}>
+                        <br></br>
                         <h2>Contribute</h2>
                             <ul>
                                 <Link to="/donate" component={Dashboard}><li>Donate</li></Link>
@@ -36,6 +38,7 @@ class Footer extends Component {
                             </ul>
                     </Grid.Column>
                     <Grid.Column width={4}>
+                        <br></br>
                         <h2>Legal</h2>
                             <ul>
                                 <Link to="/privacy" component={Privacy}><li>Privacy</li></Link>

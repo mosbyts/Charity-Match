@@ -22,7 +22,7 @@ export default class Home extends Component {
     <div>
       <div class="parallax"></div>
       <div className="topPicks">
-      <h1 className="center aligned">Editor's Top Picks</h1>
+      <h1 className="center aligned text">Editor's Top Picks</h1>
       <Grid relaxed verticalAlign='middle' columns={3}>
         <Grid.Row>
           <Grid.Column>
@@ -62,7 +62,7 @@ export default class Home extends Component {
       </Grid>
       </div>
       <Container fluid className="userOptions">
-      <h1 className="center aligned">How Can You Help?</h1>
+      <h1 className="center aligned text">How Can You Help?</h1>
         <Link to='/dashboard'>
           <Card.Group itemsPerRow={2}>
           <Card fluid>
@@ -87,7 +87,7 @@ export default class Home extends Component {
         </Link>
       </Container>
       <Container textAlign='center' className='newsletter'>
-        <h1 className="center aligned">Sign Up For Our Newsletter</h1>
+        <h1 className="center aligned text">Sign Up For Our Newsletter</h1>
         <h5>Get the latest info on your favorite charities and hear about our updates.</h5>
         <Input placeholder='Type email address here...' className='emailInput' /><Button primary className='inputBtn'>Sign Up</Button>
       </Container>

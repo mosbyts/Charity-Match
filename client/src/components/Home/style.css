@@ -19,11 +19,15 @@
 }
 
 .topPicks{
-  color: #47B673;
   display: inline-block;
-  font-family: 'Arima Madurai', cursive;
   height: 650px;
   margin: 50px 25px 75px 25px;
+}
+
+.text{
+  color: #47B673;
+  font-family: 'Arima Madurai', cursive;
+  font-size: 32px;
 }
 
 .userOptions{
@@ -39,12 +43,12 @@
   color: #47B673;
   display: inline-block;
   font-family: 'Arima Madurai', cursive;
-  height: 300px;
+  height: 250px;
   margin: 50px;
 }
 
 .emailInput{
-  margin: 40px;
+  margin: 0px 40px 40px 40px;
 }
 
 .inputBtn{
