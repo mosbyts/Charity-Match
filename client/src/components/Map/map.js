@@ -10,7 +10,7 @@ class CharityMap extends Component {
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '100px', width: '20%', marginBottom: "10px" }}>
+      <div style={{ height: '150px', width: '20%', marginBottom: "10px" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyCoO4KzYfhWYPTfsYul-2w1CK8T6B6BsWQ" }}
           defaultCenter={this.props.center}

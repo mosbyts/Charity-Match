@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
 import Footer from "../components/layout/Footer/Footer";
 // import CharityList from "../components/CharityList";
@@ -38,23 +39,33 @@ export default class Charities extends Component {
     return(
       <div>
         <Navbar />
-          {/* {this.state.charities.map((charities, index) => (
-            <Container textAlign='center'>   
-            <ResultsList>
-              <h4>{charities.charityName}</h4>
-              <h5>{charities.tagLine}</h5>
-              <p>{charities.mission}</p>
-          ))}, */}
-          {this.state.geocode.map((codes, index) => (
-            <CharityMap 
-              lat={codes[0]} 
-              long={codes[1]} 
-              center={codes}
-            />
-          ))}
-            {/* </ResultsList>
-            </Container> */}
-          )
+          <div>
+            <h2 className='center aligned popularCharities'>Popular Charities</h2>
+            <Grid divided='vertically'>
+              <Grid.Row columns={4}>
+                <Grid.Column></Grid.Column>
+                <Grid.Column>   
+              {this.state.charities.map((charities, index) => (
+                <div className='charityBlock'>
+                  <h4 className='charityName'>{charities.charityName}</h4>
+                  <h5 className='charityTag'>{charities.tagLine}</h5>
+                  <p className='charityMission'>{charities.mission}</p>
+                </div>
+              ))},
+                </Grid.Column>
+                <Grid.Column>
+              {this.state.geocode.map((codes, index) => (
+                <CharityMap 
+                  lat={codes[0]} 
+                  long={codes[1]} 
+                  center={codes}
+                />
+              ))}
+                </Grid.Column>
+                <Grid.Column></Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </div>
         <Footer />
       </div>
     )}

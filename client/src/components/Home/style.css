@@ -23,7 +23,7 @@
   display: inline-block;
   font-family: 'Arima Madurai', cursive;
   height: 650px;
-  margin: 60px;
+  margin: 50px 25px 75px 25px;
 }
 
 .userOptions{
@@ -31,6 +31,7 @@
   color: #47B673;
   font-family: 'Arima Madurai', cursive;
   height: 600px;
+  margin: 50px 20px 0px 20px;
   padding: 40px;
 }
 

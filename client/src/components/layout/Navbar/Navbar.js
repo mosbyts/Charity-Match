@@ -16,13 +16,13 @@ class Navbar extends Component {
               <Image src={ Logo } size='small' className="ui circular image" alt="Charity Match Logo" />
             </Grid.Column>
             <Grid.Column width={4}>
-              <h1 className="padding">Charity Match</h1>
+              <h1 className="charityMatch">Charity Match</h1>
             </Grid.Column>
             <Grid.Column width={7}></Grid.Column>
-            <Grid.Column width={1} className="paddingIcon">
+            <Grid.Column width={1} className="icon">
               <Icon name='user circle' size='big' className="floatRight"></Icon>
             </Grid.Column>
-            <Grid.Column width={2}  className="padding">
+            <Grid.Column width={2}  className="loginBtn">
               <Button><Link to='/dashboard' component={Login}>Log In</Link></Button>
             </Grid.Column>
           </Grid.Row>
