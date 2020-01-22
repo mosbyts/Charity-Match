@@ -18,6 +18,16 @@
   width: 400px;
 }
 
+.signUpDiv{
+  display: inline-block;
+  height: 200px;
+  margin: 50px;
+}
+
+.signUpBtn{
+  justify-content: center;
+}
+
 .topPicks{
   display: inline-block;
   height: 650px;
