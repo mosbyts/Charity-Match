@@ -53,6 +53,10 @@ app.use(cors());
 //Allows user to upload images using Multer & CORS-------------------------------
 
 // Routes------------------------------------------------------------------------
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+});
+
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
