@@ -50,6 +50,8 @@ app.use(cors());
 //    else
 //      res.status("409").json("No Files to Upload."); 
 // });
+//Allows user to upload images using Multer & CORS-------------------------------
+
 // Routes------------------------------------------------------------------------
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
@@ -60,38 +62,12 @@ app.get("*", function(req, res) {
 // });
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Charity_Match");
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds141937.mlab.com:41937/heroku_8m74wkcq");
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static('client/build'));
+}
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-
-
-
-//Allows user to upload images using Multer & CORS-------------------------------
-
-// //Connects to MySQL database and JawsDB on Heroku--------------------------------
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user:'root',
-//   password:'password',
-//   database: 'userData'
-//   });
-  
-//   connection.connect(function(err){
-//     (err)? console.log(err): console.log('Connected.');
-//   });
-
-//   if (process.env.JAWSDB_URL === "production") {
-//     app.use(express.static("client/build"));
-//   }
-// //Connects to MySQL database and JawsDB on Heroku--------------------------------
-// // Routes------------------------------------------------------------------------
-
-// db.sequelize.sync({ force: true }).then(function(){
-//     app.listen(PORT, function() {
-//       console.log(`🌎 ==> API server now on port ${PORT}!`);
-//     });
-//   });
   

@@ -21,6 +21,16 @@ export default class Home extends Component {
     return(
     <div>
       <div class="parallax"></div>
+      <div className='signUpDiv'>
+      <Grid verticalAlign='middle' columns={1}>
+        <Grid.Row>
+          <h1 className="center aligned text">Find Your Charity Match</h1>
+        </Grid.Row>
+        <Grid.Row>
+          <Link to='/dashboard'><Button className='signUpBtn'>Sign Up</Button></Link>
+        </Grid.Row>
+      </Grid>
+      </div>
       <div className="topPicks">
       <h1 className="center aligned text">Editor's Top Picks</h1>
       <Grid relaxed verticalAlign='middle' columns={3}>
