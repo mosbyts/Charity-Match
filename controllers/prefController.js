@@ -2,20 +2,18 @@ const db = require("../models");
 const connection = require("../server");
 
 // Load User model
-const User = require("../models/user");
+const Preferences = require("../models/Preferences");
 
 module.exports = {
     create: (req, res) => {
         console.log(req.body)
-        User.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            userName: req.body.userName,
-            password: req.body.password,
-            preferences: req.body.preferences || {}
+        Preferences.create({
+            question1: req.body.question1,
+            question2: req.body.question2,
+            question3: req.body.question3,
+            question4: req.body.question4,
         }).then(dbRes => {
-            console.log("it worked")
+            console.log("pref's worked")
             res.json(dbRes)
         });
     }

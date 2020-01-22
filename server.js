@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 3001;
 // var db = require("./models/index.js");
 // const multer = require("multer");
 const cors = require("cors");
-const users = require("./routes/api/users");
-app.use("/api/users", users);
+const router = require("./routes/api");
+
 //Necessary dependencies---------------------------------------------------------
 
 // Bodyparser middleware---------------------------------------------------------
@@ -58,9 +58,15 @@ app.get("*", function(req, res) {
 // app.get('/secure', authenticationRequired, (req, res) => {
 //   res.json(req.jwt);
 // });
-
+const db = require("./config/keys").mongoURI;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Charity_Match");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Charity_Match");
+mongoose.connect(
+  db, {useNewUrlParser: true}
+).then(()=> console.log("connected to mongodb"))
+.catch(err => console.log(err));
+
+app.use("/api", router);
 
 // Start the API server
 app.listen(PORT, function() {
