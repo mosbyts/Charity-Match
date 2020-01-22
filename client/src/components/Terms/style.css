@@ -4,7 +4,7 @@
     background-image: url("");
   
     /* Set a specific height */
-    height: 500px;
+    height: 550px;
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -15,13 +15,13 @@
 
 .termsDiv {
     height: 500px;
-    margin: 20px;
+    margin: 50px 20px 0px 20px;
 }
 
 .terms{
     color: #47B673;
     font-family: 'Arima Madurai', cursive;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .termsInfo{

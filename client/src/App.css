@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap');
+
+.popularCharities{
+    color: #47B673;
+    font-family: 'Arima Madurai', cursive;
+    margin-top: 50px;
+}
+
+.charityBlock{
+    display: inline-block;
+}
+
+.charityName{
+    font-family: 'Arima Madurai', cursive;
+    padding-top: 20px;
+}

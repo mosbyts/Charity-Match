@@ -5,22 +5,23 @@
     height: 85px;
 }
 
-h1{
-    font-family: 'Arima Madurai', cursive;
-    padding-top: 15px;
-}
-
 .image{
     padding: 10px;
 }
 
-.padding{
+.charityMatch{
     color: #FF7367;
+    font-family: 'Arima Madurai', cursive;
+    font-size: 35px;
     padding-top: 15px;
 }
 
-.paddingIcon{
+.loginBtn{
     padding-top: 20px;
+}
+
+.icon{
+    padding-top: 12px;
 }
 
 .floatRight{
