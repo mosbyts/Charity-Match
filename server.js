@@ -53,12 +53,8 @@ app.use(cors());
 //Allows user to upload images using Multer & CORS-------------------------------
 
 // Routes------------------------------------------------------------------------
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
-});
-
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
 // app.get('/secure', authenticationRequired, (req, res) => {
@@ -67,9 +63,9 @@ app.get("*", function(req, res) {
 const db = require("./config/keys").mongoURI;
 // Connect to the Mongo DB
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds141937.mlab.com:41937/heroku_8m74wkcq");
+mongoose.connect(process.env.MONGOLAB_WHITE_URI || "mongodb://heroku_w02b8xcl:83hlt0u0d3p45muhjj3199r769@ds147436.mlab.com:47436/heroku_w02b8xcl");
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
 }
 
 mongoose.connect(
