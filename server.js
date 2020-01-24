@@ -9,9 +9,10 @@ const PORT = process.env.PORT || 3001;
 // const mysql = require('mysql');
 // var db = require("./models/index.js");
 // const multer = require("multer");
-const cors = require("cors");
+//const cors = require("cors");
 const router = require("./routes/api");
-
+const users = require("./routes/api/users");
+app.use("/api/users", users);
 //Necessary dependencies---------------------------------------------------------
 
 // Bodyparser middleware---------------------------------------------------------
@@ -40,7 +41,7 @@ require("./config/passport")(passport);
 
 // const upload = multer({ storage })
 
-app.use(cors());
+//app.use(cors());
 
 // app.post('/upload', upload.single('image'), (req, res) =>{
 //   if(req.file)
@@ -53,8 +54,8 @@ app.use(cors());
 //Allows user to upload images using Multer & CORS-------------------------------
 
 // Routes------------------------------------------------------------------------
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "client", "public", "index.html"));
 });
 
 // app.get('/secure', authenticationRequired, (req, res) => {

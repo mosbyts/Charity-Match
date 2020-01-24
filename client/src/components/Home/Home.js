@@ -11,6 +11,7 @@ import FMLogo from './logos/FMLogo.jpg'
 import TFTLogo from './logos/TFTLogo.png'
 import donate from './donate.jpg'
 import volunteer from './volunteer.png'
+import connect from "./connect.jpg"
 
 export default class Home extends Component {
   componentDidMount() {
@@ -21,58 +22,20 @@ export default class Home extends Component {
     return(
     <div>
       <div class="parallax"></div>
-      <Grid verticalAlign='middle' columns={1} className='signUpDiv'>
-        <Grid.Row centered columns={1}>
-          <Grid.Column>
-            <h1 className="center aligned text">Find Your Charity Match</h1>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row centered columns={1}>
-          <Grid.Column>
-            <Link to='/dashboard'><Button>Sign Up</Button></Link>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <div className="topPicks">
-      <h1 className="center aligned text">Editor's Top Picks</h1>
-      <Grid relaxed verticalAlign='middle' columns={3}>
-        <Grid.Row>
-          <Grid.Column>
-          <ScrollAnimation animateIn='fadeIn'>
-            <a href="https://www.toosmart2start.com"><Image src={HTS2SLogo} className="charityLogo" alt="Henrico Too Smart 2 Start Logo" /></a>
-          </ScrollAnimation>
-          </Grid.Column>
-          <Grid.Column>
-          <ScrollAnimation animateIn='fadeIn' delay={450}>
-            <a href="https://www.rebuildingtogether.org"><Image src={RTLogo} className="charityLogo" alt="Rebuilding Together Logo" /></a>
-          </ScrollAnimation>
-          </Grid.Column>
-          <Grid.Column>
-          <ScrollAnimation animateIn='fadeIn' delay={950}>
-            <a href="https://www.savethechildren.org"><Image src={STCLogo} className="charityLogo" alt="Save The Children Logo" /></a>
-          </ScrollAnimation>
-          </Grid.Column>
-        </Grid.Row>
 
+      <Grid verticalAlign='middle' columns={2} className='signUpDiv'>
         <Grid.Row>
           <Grid.Column>
-          <ScrollAnimation animateIn='fadeIn'>
-            <a href="https://www.rmhc.org/"><Image src={RMHCLogo} className="charityLogo" alt="Ronald McDonald House Charities Logo" /></a>
-          </ScrollAnimation>
+            <Image src={connect} size='big' className="connectImg" rounded />
           </Grid.Column>
           <Grid.Column>
-          <ScrollAnimation animateIn='fadeIn' delay={450}>
-            <a href="https://feedmore.org/"><Image src={FMLogo} className="charityLogo" alt="Feed More Logo" /></a>
-          </ScrollAnimation>
-          </Grid.Column>
-          <Grid.Column>
-          <ScrollAnimation animateIn='fadeIn' delay={950}>
-            <a href="https://techfortroops.org/"><Image src={TFTLogo} className="charityLogo" alt="Tech For Troops Logo" /></a>
-          </ScrollAnimation>
+            <h1 className="text">Find Your Charity Match</h1>
+            <p>We connect with your most compatible charity, click the button and begin your generosity journey!</p>
+            <Link to='/dashboard'><Button primary size='big'>Sign Up</Button></Link>
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      </div>
+      
       <Container fluid className="userOptions">
       <h1 className="center aligned text">How Can You Help?</h1>
         <Link to='/dashboard'>
@@ -98,7 +61,48 @@ export default class Home extends Component {
         </Card.Group>
         </Link>
       </Container>
-      <Container textAlign='center' className='newsletter'>
+
+      <div className="topPicks">
+      <h1 className="center aligned text">Editor's Top Picks</h1>
+      <Grid relaxed verticalAlign='middle' columns={3}>
+        <Grid.Row>
+          <Grid.Column>
+          <ScrollAnimation animateIn='fadeIn'>
+            <a href="https://www.toosmart2start.com"><Image src={HTS2SLogo} className="charityLogo" alt="Henrico Too Smart 2 Start Logo" /></a>
+          </ScrollAnimation>
+          </Grid.Column>
+          <Grid.Column>
+          <ScrollAnimation animateIn='fadeIn' delay={450}>
+            <a href="https://www.rebuildingtogether.org"><Image src={RTLogo} className="charityLogo" alt="Rebuilding Together Logo" /></a>
+          </ScrollAnimation>
+          </Grid.Column>
+          <Grid.Column>
+          <ScrollAnimation animateIn='fadeIn' delay={950}>
+            <a href="https://www.savethechildren.org"><Image src={STCLogo} className="charityLogo" alt="Save The Children Logo" /></a>
+          </ScrollAnimation>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+          <ScrollAnimation animateIn='fadeIn'>
+            <a href="https://www.rmhc.org/"><Image src={RMHCLogo} className="charityLogo" alt="Ronald McDonald House Charities Logo" /></a>
+          </ScrollAnimation>
+          </Grid.Column>
+          <Grid.Column>
+          <ScrollAnimation animateIn='fadeIn' delay={450}>
+            <a href="https://feedmore.org/"><Image src={FMLogo} className="charityLogo" alt="Feed More Logo" /></a>
+          </ScrollAnimation>
+          </Grid.Column>
+          <Grid.Column>
+          <ScrollAnimation animateIn='fadeIn' delay={950}>
+            <a href="https://techfortroops.org/"><Image src={TFTLogo} className="charityLogo" alt="Tech For Troops Logo" /></a>
+          </ScrollAnimation>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      </div>
+
+      <Container textAlign='center' className='newsletter' fluid>
         <h1 className="center aligned text">Sign Up For Our Newsletter</h1>
         <h5>Get the latest info on your favorite charities and hear about our updates.</h5>
         <Input placeholder='Type email address here...' className='emailInput' /><Button primary className='inputBtn'>Sign Up</Button>
