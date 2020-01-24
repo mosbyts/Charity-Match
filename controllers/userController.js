@@ -19,7 +19,7 @@ module.exports = {
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     email: req.body.email,
-                    userName: req.body.userName,
+                    username: req.body.username,
                     password: req.body.password,
                     preferences: req.body.preferences || {}
                 });

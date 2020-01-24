@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+// import API from "../../utils/API";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import Navbar from "../layout/Navbar/Navbar";
@@ -49,6 +50,8 @@ class Login extends Component {
     };
 
     this.props.loginUser(userData);
+    // API.postRegister(userData).then(res => {console.log("user api called"); console.log(res)}).catch(err => console.log(err));
+
   };
 
   render() {
@@ -102,7 +105,8 @@ class Login extends Component {
                 </span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <Link to="/dashboard"><button
+              {/* <Link to="/dashboard"> */}
+                <button
                   style={{
                     width: "150px",
                     borderRadius: "3px",
@@ -113,7 +117,8 @@ class Login extends Component {
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
                   Login
-                </button></Link>
+                </button>
+                {/* </Link> */}
               </div>
             </form>
           </div>
