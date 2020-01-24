@@ -50,9 +50,12 @@ app.use(cors());
 //    else
 //      res.status("409").json("No Files to Upload."); 
 // });
+
+app.use(express.static(path.join(__dirname,"./client/build")));
+
 // Routes------------------------------------------------------------------------
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 // app.get('/secure', authenticationRequired, (req, res) => {
