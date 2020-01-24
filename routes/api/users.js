@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 // const axios = require('axios');
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
-const passport = require("passport");
+// const bcrypt = require("bcryptjs");
+// const jwt = require("jsonwebtoken");
+// const keys = require("../../config/keys");
+// const passport = require("passport");
 const usersController = require('../../controllers/userController');
 
 // Load input validation
@@ -14,27 +14,14 @@ const validateLoginInput = require("../../validation/login");
 // // Load User model
 // const User = require("../../models/user");
 
-router.route("/register")
-  .post(usersController.create)
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-// axios.post('/register')
-//   .then(function (response) {
-//     // handle success
-//     // console.log(response);
-//     return response.json;
-//   })
-//   .catch(function (error) {
-//     // handle error
-//     // console.log(error);
-//     return error.json;
-//   })
-//   .finally(function () {
-//     // always executed
-//   });
+router.route("/register")
+  .post(usersController.create)
 
-
+router.route("/login")
+  .post(usersController.login)
   // const { errors, isValid } = validateRegisterInput(req.body);
 
   // // Check validation

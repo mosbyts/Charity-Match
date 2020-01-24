@@ -11,5 +11,8 @@ export default {
     },
     getGeocode: function(address,city,state){
         return axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+","+city+","+state+"&key="+key);
+    },
+    postRegister: function(user){
+        return axios.post("localhost:3001/api/users/login",{firstName: user.firstName});
     }
 };

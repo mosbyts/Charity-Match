@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
+import API from "../../utils/API";
 import classnames from "classnames";
 import Navbar from "../layout/Navbar/Navbar";
 import Footer from "../layout/Footer/Footer";
@@ -53,6 +54,7 @@ class Register extends Component {
     };
 
     this.props.registerUser(newUser, this.props.history);
+    API.postRegister(newUser).then(res => {console.log("user api called"); console.log(res)}).catch(err => console.log(err));
   };
 
   render() {
@@ -156,7 +158,7 @@ class Register extends Component {
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <Link to="/dashboard"><button
+                <button
                   style={{
                     width: "150px",
                     borderRadius: "3px",
@@ -167,7 +169,7 @@ class Register extends Component {
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
                   Sign up
-                </button></Link>
+                </button>
               </div>
             </form>
           </div>
