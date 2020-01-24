@@ -29,7 +29,7 @@ export default class Charities extends Component {
   }
 
   getGeoCode = () => {
-    this.state.charities.slice(0, 10).map(charities => { 
+    this.state.charities.slice(0, 10).forEach(charities => { 
       API.getGeocode(charities.mailingAddress.streetAddress1, charities.mailingAddress.city, charities.mailingAddress.stateOrProvince)
       .then(res => this.setState({geocode: [...this.state.geocode, [res.data.results[0].geometry.location.lat, res.data.results[0].geometry.location.lng]]}));
     })
