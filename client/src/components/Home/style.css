@@ -20,12 +20,7 @@
 
 .signUpDiv{
   display: inline-block;
-  height: 200px;
-  margin: 50px;
-}
-
-.signUpBtn{
-  justify-content: center;
+  height: 500px;
 }
 
 .topPicks{
@@ -38,13 +33,23 @@
   color: #47B673;
   font-family: 'Arima Madurai', cursive;
   font-size: 32px;
+  padding-top: 25px;
+}
+
+.connectImg{
+  padding: 60px 0px 50px 50px;
+}
+
+
+p{
+  color: #47B673;
 }
 
 .userOptions{
   background-color: #E7E7E7;
   color: #47B673;
   font-family: 'Arima Madurai', cursive;
-  height: 600px;
+  height: 650px;
   margin: 50px 20px 0px 20px;
   padding: 40px;
 }
@@ -54,7 +59,7 @@
   display: inline-block;
   font-family: 'Arima Madurai', cursive;
   height: 250px;
-  margin: 50px;
+  margin: 150px 50px 50px 50px;
 }
 
 .emailInput{
