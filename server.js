@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 // var db = require("./models/index.js");
 // const multer = require("multer");
 //const cors = require("cors");
+const router = require("./routes/api");
 const users = require("./routes/api/users");
 app.use("/api/users", users);
 //Necessary dependencies---------------------------------------------------------
@@ -60,12 +61,21 @@ app.get("*", function(req, res) {
 // app.get('/secure', authenticationRequired, (req, res) => {
 //   res.json(req.jwt);
 // });
-
+const db = require("./config/keys").mongoURI;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds141937.mlab.com:41937/heroku_8m74wkcq");
+
+mongoose.connect(process.env.MONGOLAB_WHITE_URI || "mongodb://heroku_w02b8xcl:83hlt0u0d3p45muhjj3199r769@ds147436.mlab.com:47436/heroku_w02b8xcl");
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
 }
+
+mongoose.connect(
+  db, {useNewUrlParser: true}
+).then(()=> console.log("connected to mongodb"))
+.catch(err => console.log(err));
+
+app.use("/api", router);
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

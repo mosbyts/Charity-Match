@@ -48,8 +48,14 @@ export default class Charities extends Component {
               {this.state.charities.map((charities, index) => (
                 <div className='charityBlock'>
                   <h4 className='charityName'>{charities.charityName}</h4>
+                  {/* <p>{this.state.geocode[index]}</p> */}
                   <h5 className='charityTag'>{charities.tagLine}</h5>
                   <p className='charityMission'>{charities.mission}</p>
+                  {/* <CharityMap 
+                  lat={this.state.geocode[index]} 
+                  long={this.state.geocode[index][1]} 
+                  center={this.state.geocode[index]}
+                /> */}
                 </div>
               ))},
                 </Grid.Column>

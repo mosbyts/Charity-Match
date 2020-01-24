@@ -6,6 +6,10 @@ const preferencesSchema = new Schema({
   question2: { type: String },
   question3: { type: String },
   question4: { type: String },
+  preferenceSet: {
+    type: Date,
+    default: Date.now
+  },
 });
 
 const Preferences = mongoose.model("Preferences", preferencesSchema);
