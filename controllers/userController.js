@@ -67,7 +67,7 @@ module.exports = {
                 // Create JWT Payload
                 const payload = {
                 id: user.id,
-                username: user.userName
+                name: user.firstName
                 };
 
                 // Sign token
@@ -81,7 +81,7 @@ module.exports = {
                     res.json({
                     success: true,
                     token: "Bearer " + token,
-                    preferences: user.preferences
+                    // preferences: user.preferences
                     });
                 }
                 );

@@ -18,7 +18,7 @@ class Dashboard extends Component {
           <div className="landing-copy col s12 center-align">
             <h4>
               <b>Hey there,</b> 
-              {/* {user.firstName.split(" ")[0]} */}
+              {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
                 You are logged into{" "}
                 <span style={{ fontFamily: "monospace" }}>Charity Match</span> 👏
