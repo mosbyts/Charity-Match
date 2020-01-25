@@ -92,5 +92,30 @@ module.exports = {
             }
             });
         });
-    }  
+    },
+    setPref: (req, res) => {
+        console.log(req.body);
+        const email = {email: req.body.email};
+        const updatePref = {preferences: req.body.preferences}
+        User.findOneAndUpdate( email , updatePref, {new: true}).then(user => {
+        // console.log(user);
+        if (!user) {
+            return res.status(400).send("update failed");
+        } else {
+            return res.status(200).send('Set Preferences for '+ JSON.stringify(email))
+            }
+        })
+    },
+    getPref: (req, res) => {
+        console.log(req.body);
+        const email = {email: req.body.email}
+        User.findOne(email).then(user => {
+            if(!user) {
+                return res.status(400).send("get preferences failed");
+            } else {
+                return res.json(user);
+            }
+
+        })
+    }
 }

@@ -48,6 +48,7 @@ export default class Charities extends Component {
               {this.state.charities.map((charities, index) => (
                 <div className='charityBlock'>
                   <h4 className='charityName'>{charities.charityName}</h4>
+                  <a href={charities.websiteURL}>{charities.websiteURL}</a>
                   {/* <p>{this.state.geocode[index]}</p> */}
                   <h5 className='charityTag'>{charities.tagLine}</h5>
                   <p className='charityMission'>{charities.mission}</p>
