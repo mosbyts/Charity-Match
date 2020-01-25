@@ -26,8 +26,9 @@ class Survey extends Component {
         this.setState({question4: value});
     };
     handleSubmit = () => {
+        const userEmail = localStorage.getItem("LoginEmail");
         const { question1, question2, question3, question4 } = this.state
-        const object = {
+        const prefs = {
             "question1": question1,
             "question2": question2,
             "question3": question3,
@@ -35,8 +36,8 @@ class Survey extends Component {
         }
     
         this.setState({ subQuestion1: question1, subQuestion2: question2, subQuestion3: question3, subQuestion4: question4 })
-        API.postPreferences(object);
-        console.log(object);
+        API.postPreferences(userEmail,prefs).catch(err => {console.log(err.response)});
+        console.log(userEmail,prefs);
     }
 
     componentDidMount() {

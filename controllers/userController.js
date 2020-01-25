@@ -5,7 +5,11 @@ const keys = require("../config/keys");
 const passport = require("passport");
 
 // Load User model
+<<<<<<< HEAD
 const db = require("../models");
+=======
+const User = require("../models/User");
+>>>>>>> Fixed api's, finally -P
 
 module.exports = {
     create: (req, res) => {
@@ -114,7 +118,6 @@ module.exports = {
             } else {
                 return res.json(user);
             }
-
         })
     }
 }
