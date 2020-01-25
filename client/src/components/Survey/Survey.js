@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
+import API from '../../utils/API';
 
 class Survey extends Component {
     state = {
@@ -26,8 +27,16 @@ class Survey extends Component {
     };
     handleSubmit = () => {
         const { question1, question2, question3, question4 } = this.state
+        const object = {
+            "question1": question1,
+            "question2": question2,
+            "question3": question3,
+            "question4": question4
+        }
     
         this.setState({ subQuestion1: question1, subQuestion2: question2, subQuestion3: question3, subQuestion4: question4 })
+        API.postPreferences(object);
+        console.log(object);
     }
 
     componentDidMount() {

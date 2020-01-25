@@ -17,5 +17,8 @@ export default {
     },
     postLogin: function(user){
         return axios.post("api/users/login")
+    },
+    postPreferences: function(pref){
+        return axios.post("api/users/setPreferences")
     }
 };

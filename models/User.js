@@ -13,7 +13,7 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  preferences: {type: Object, required: false}
+  preferences: {type: Schema.Types.Mixed, required: false}
 
 });
 
