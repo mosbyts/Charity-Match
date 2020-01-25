@@ -16,9 +16,12 @@ export default {
         return axios.post("api/users/register");
     },
     postLogin: function(user){
-        return axios.post("api/users/login")
+        return axios.post("api/users/login", user);
     },
-    postPreferences: function(pref){
-        return axios.post("api/users/setPreferences")
+    postPreferences: function(userEmail, pref){
+        return axios.post("api/users/setPreferences", {email: userEmail, preferences: pref});
+    },
+    getPreferences: function(userEmail){
+        return axios.get("api/users/getPreferences", {email: userEmail});
     }
 };

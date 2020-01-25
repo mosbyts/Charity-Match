@@ -6,7 +6,7 @@ const keys = require("../config/keys");
 const passport = require("passport");
 
 // Load User model
-const User = require("../models/user");
+const User = require("../models/User");
 
 module.exports = {
     create: (req, res) => {
@@ -115,7 +115,6 @@ module.exports = {
             } else {
                 return res.json(user);
             }
-
         })
     }
 }
