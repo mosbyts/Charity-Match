@@ -51,12 +51,21 @@ app.use(cors());
 //      res.status("409").json("No Files to Upload."); 
 // });
 
-app.use(express.static(path.join(__dirname,"./client/build")));
+// Serve Static Build file in Production
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 
-// Routes------------------------------------------------------------------------
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+  app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+// app.use(express.static(path.join(__dirname,"./client/build")));
+
+// // Routes------------------------------------------------------------------------
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 // app.get('/secure', authenticationRequired, (req, res) => {
 //   res.json(req.jwt);

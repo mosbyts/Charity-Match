@@ -9,7 +9,6 @@ import Terms from "../../Terms/Terms";
 import Dashboard from "../../dashboard/Dashboard";
 import Survey from "../../Survey/Survey";
 import Agreement from "../../Agreement/Agreement";
-import Login from "../../auth/Login";
 
 class Footer extends Component {
     render() {

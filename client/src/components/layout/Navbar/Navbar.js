@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button, Divider, Grid, Image, Icon } from 'semantic-ui-react';
+import { Button, Grid, Image, Icon } from 'semantic-ui-react';
 import Logo from "./ntLogo.png";
 import "./style.css";
 import Login from "../../auth/Login";
@@ -13,7 +13,7 @@ class Navbar extends Component {
         <Grid verticalAlign='top'>
           <Grid.Row>
             <Grid.Column width={2}>
-              <Image src={ Logo } size='small' className="ui circular image" alt="Charity Match Logo" />
+              <Image src={Logo} size='small' className="ui circular image" alt="Charity Match Logo" />
             </Grid.Column>
             <Grid.Column width={4}>
               <h1 className="charityMatch">Charity Match</h1>
