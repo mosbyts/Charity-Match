@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 import API from "../utils/API";
 import Footer from "../components/layout/Footer/Footer";
 // import CharityList from "../components/CharityList";
@@ -40,17 +40,20 @@ export default class Charities extends Component {
       <div>
         <Navbar />
           <div>
+            <div className='parallax'></div>
             <h2 className='center aligned popularCharities'>Popular Charities</h2>
             <Grid divided='vertically'>
               <Grid.Row columns={4}>
-                <Grid.Column></Grid.Column>
-                <Grid.Column>   
+                <Grid.Column width={2}></Grid.Column>
+                <Grid.Column width={8}>   
               {this.state.charities.map((charities, index) => (
                 <div className='charityBlock'>
+                  <Segment raised>
                   <h4 className='charityName'>{charities.charityName}</h4>
-                  {/* <p>{this.state.geocode[index]}</p> */}
                   <h5 className='charityTag'>{charities.tagLine}</h5>
                   <p className='charityMission'>{charities.mission}</p>
+                  <h6><a className='charityURL' href={charities.websiteURL}>{charities.websiteURL}</a></h6>
+                  </Segment>
                   {/* <CharityMap 
                   lat={this.state.geocode[index]} 
                   long={this.state.geocode[index][1]} 
@@ -59,7 +62,7 @@ export default class Charities extends Component {
                 </div>
               ))},
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column width={4}>
               {this.state.geocode.map((codes, index) => (
                 <CharityMap 
                   lat={codes[0]} 
@@ -68,7 +71,7 @@ export default class Charities extends Component {
                 />
               ))}
                 </Grid.Column>
-                <Grid.Column></Grid.Column>
+                <Grid.Column width={2}></Grid.Column>
               </Grid.Row>
             </Grid>
           </div>
