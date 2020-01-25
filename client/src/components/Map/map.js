@@ -13,7 +13,7 @@ class CharityMap extends Component {
       <div style={{ height: '200px', width: '65%', marginBottom: "40px", marginTop: "15px" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyCoO4KzYfhWYPTfsYul-2w1CK8T6B6BsWQ" }}
-          defaultCenter={this.props.center}
+          center={this.props.center}
           defaultZoom={this.props.zoom}
         >
         <Icon 
