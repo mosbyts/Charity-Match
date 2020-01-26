@@ -26,7 +26,9 @@ export default class Home extends Component {
       <Grid verticalAlign='middle' columns={2} className='signUpDiv'>
         <Grid.Row>
           <Grid.Column>
-            <Image src={connect} size='big' className="connectImg" rounded />
+            <ScrollAnimation animateIn='flipInY'>
+              <Image src={connect} size='big' className="connectImg" rounded />
+            </ScrollAnimation>
           </Grid.Column>
           <Grid.Column>
             <h1 className="text">Find Your Charity Match</h1>
