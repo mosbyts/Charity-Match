@@ -1,4 +1,3 @@
-const db = require("../models");
 const connection = require("../server");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -6,16 +5,16 @@ const keys = require("../config/keys");
 const passport = require("passport");
 
 // Load User model
-const User = require("../models");
+const db = require("../models");
 
 module.exports = {
     create: (req, res) => {
         console.log(req.body)
-        User.findOne({ email: req.body.email}).then(user => {
+        db.User.findOne({ email: req.body.email}).then(user => {
             if (user) {
                 return res.status(400).json({ email: "Email already exists" });
             } else {
-                const newUser = new User({
+                const newUser = new db.User({
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     email: req.body.email,
@@ -54,7 +53,7 @@ module.exports = {
         const password = req.body.password;
 
         // Find user by email
-        User.findOne({ email }).then(user => {
+        db.User.findOne({ email }).then(user => {
             // Check if user exists
             if (!user) {
                 return res.status(404).json({ emailnotfound: "Email not found" });
