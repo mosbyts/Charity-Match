@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 import API from "../utils/API";
 import Footer from "../components/layout/Footer/Footer";
 // import CharityList from "../components/CharityList";
@@ -31,7 +31,9 @@ export default class Charities extends Component {
   getGeoCode = () => {
     this.state.charities.slice(0, 10).forEach(charities => { 
       API.getGeocode(charities.mailingAddress.streetAddress1, charities.mailingAddress.city, charities.mailingAddress.stateOrProvince)
-      .then(res => this.setState({geocode: [...this.state.geocode, [res.data.results[0].geometry.location.lat, res.data.results[0].geometry.location.lng]]}));
+      .then(res => this.setState({geocodeLat: [...this.state.geocodeLat, [res.data.results[0].geometry.location.lat]],
+                                  geocodeLong: [...this.state.geocodeLong, [res.data.results[0].geometry.location.lng]],
+                                  geocode: [...this.state.geocode, [res.data.results[0].geometry.location.lat, res.data.results[0].geometry.location.lng]]}));
     })
   };
 
@@ -40,36 +42,35 @@ export default class Charities extends Component {
       <div>
         <Navbar />
           <div>
+            <div className='parallax'></div>
             <h2 className='center aligned popularCharities'>Popular Charities</h2>
             <Grid divided='vertically'>
-              <Grid.Row columns={4}>
-                <Grid.Column></Grid.Column>
-                <Grid.Column>   
-              {this.state.charities.map((charities, index) => (
-                <div className='charityBlock'>
-                  <h4 className='charityName'>{charities.charityName}</h4>
-                  <a href={charities.websiteURL}>{charities.websiteURL}</a>
-                  {/* <p>{this.state.geocode[index]}</p> */}
-                  <h5 className='charityTag'>{charities.tagLine}</h5>
-                  <p className='charityMission'>{charities.mission}</p>
-                  {/* <CharityMap 
-                  lat={this.state.geocode[index]} 
-                  long={this.state.geocode[index][1]} 
-                  center={this.state.geocode[index]}
-                /> */}
-                </div>
-              ))},
+
+              <Grid.Row columns={3}>
+                <Grid.Column width={2}></Grid.Column>
+                <Grid.Column width={12}>   
+                {this.state.charities.map((charities, index) => (
+                  <Segment raised>
+                    <Grid>
+                      <Grid.Column width={10}>
+                      <h4 className='charityName'>{charities.charityName}</h4>
+                      <h5 className='charityTag'>{charities.tagLine}</h5>
+                      <p className='charityMission'>{charities.mission}</p>
+                      <h6><a className='charityURL' href={charities.websiteURL}>{charities.websiteURL}</a></h6>
+                      </Grid.Column>
+                      <Grid.Column width={1}></Grid.Column>
+                      <Grid.Column width={5}>
+                        <CharityMap 
+                        lat={this.state.geocodeLat[index]} 
+                        long={this.state.geocodeLong[index]} 
+                        center={this.state.geocode[index]}
+                        />
+                      </Grid.Column>
+                    </Grid>
+                  </Segment>  
+                ))},
                 </Grid.Column>
-                <Grid.Column>
-              {this.state.geocode.map((codes, index) => (
-                <CharityMap 
-                  lat={codes[0]} 
-                  long={codes[1]} 
-                  center={codes}
-                />
-              ))}
-                </Grid.Column>
-                <Grid.Column></Grid.Column>
+                <Grid.Column width={2}></Grid.Column>
               </Grid.Row>
             </Grid>
           </div>
