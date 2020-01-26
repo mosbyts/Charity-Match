@@ -54,10 +54,7 @@ export default class Navbar extends Component {
                 </Menu>
                 </div>
               </Grid.Column>
-              <Grid.Column width={1} className="icon">
-                <Icon name='user circle' size='big' className="floatRight"></Icon>
-              </Grid.Column>
-              <Grid.Column width={2}  className="loginBtn">
+              <Grid.Column width={3}  className="loginBtn">
                 <Button><Link to='/dashboard' component={Login}>My Dashboard</Link></Button>
               </Grid.Column>
             </Grid.Row>
