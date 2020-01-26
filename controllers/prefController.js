@@ -17,10 +17,4 @@ module.exports = {
             res.json(dbRes)
         }).catch(err => res.status(404).json(err));
     }
-    // createUser: function(){
-    //     connection.query("INSERT INTO userData(email, username, firstName, lastName) VALUES (" + email + ", " + username + ", " + firstName + ", " + lastName + ")");
-    // },
-    // updateUserData: function(){
-    //     connection.query("INSERT INTO userData(username, charityScore, charityMatch) VALUES(" + username + ", " + charityScore + ", " + charityMatch + ")");
-    // }
 }
