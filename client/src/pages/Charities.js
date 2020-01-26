@@ -19,13 +19,24 @@ export default class Charities extends Component {
   // When the component mounts, run function
   componentDidMount() {
     window.scrollTo(0 , 0);
-    this.showRandom();
+    this.getCharities();
   }
 
-  showRandom = () => {
-    API.getRandomCharity()
-    .then(res => this.setState({charities: res.data}))
-    .finally(() => {this.getGeoCode()});
+  getCharities = () => {
+    const userEmail = localStorage.getItem("LoginEmail");
+
+    if (userEmail) {
+      console.log("These results are based on your preferences");
+      const userPrefs = localStorage.getItem("LoginPrefs");
+
+      API.getCharityMatch(userPrefs)
+      .then(res => this.setState({charities: res.data}))
+      .finally(() => {this.getGeoCode()});
+    } else {
+      API.getRandomCharity()
+      .then(res => this.setState({charities: res.data}))
+      .finally(() => {this.getGeoCode()});
+    }
   }
 
   getGeoCode = () => {
