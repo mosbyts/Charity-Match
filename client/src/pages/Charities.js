@@ -45,6 +45,7 @@ export default class Charities extends Component {
             <div className='parallax'></div>
             <h2 className='center aligned popularCharities'>Popular Charities</h2>
             <Grid divided='vertically'>
+
               <Grid.Row columns={3}>
                 <Grid.Column width={2}></Grid.Column>
                 <Grid.Column width={12}>   

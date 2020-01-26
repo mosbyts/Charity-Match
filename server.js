@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 const router = require("./routes/api");
 
+app.use(cors());
 //Necessary dependencies---------------------------------------------------------
 
 // Bodyparser middleware---------------------------------------------------------
@@ -39,8 +40,6 @@ require("./config/passport")(passport);
 // });
 
 // const upload = multer({ storage })
-
-app.use(cors());
 
 // app.post('/upload', upload.single('image'), (req, res) =>{
 //   if(req.file)
@@ -74,8 +73,7 @@ const db = require("./config/keys").mongoURI;
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Charity_Match");
 mongoose.connect(
-  db, {useUnifiedTopology: true,
-      useNewUrlParser: true}
+  db, {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false } 
 ).then(()=> console.log("connected to mongodb"))
 .catch(err => console.log(err));
 

@@ -22,6 +22,12 @@ router.route("/register")
 
 router.route("/login")
   .post(usersController.login)
+
+router.route("/setPreferences")
+  .post(usersController.setPref)
+
+router.route("/getPreferences")
+  .get(usersController.getPref)
   // const { errors, isValid } = validateRegisterInput(req.body);
 
   // // Check validation
