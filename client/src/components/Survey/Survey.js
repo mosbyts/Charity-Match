@@ -36,7 +36,9 @@ class Survey extends Component {
         }
     
         this.setState({ subQuestion1: question1, subQuestion2: question2, subQuestion3: question3, subQuestion4: question4 })
-        API.postPreferences(userEmail,prefs).catch(err => {console.log(err.response)});
+        API.postPreferences(userEmail,prefs)
+            .then(localStorage.setItem("LoginPrefs", JSON.stringify(prefs)))
+            .catch(err => {console.log(err.response)});
         console.log(userEmail,prefs);
     }
 
@@ -55,49 +57,49 @@ class Survey extends Component {
                         <label>Which charitable cause are you most interested in supporting?</label>
                             <Form.Radio
                                 label='Animals and Wildlife'
-                                value='AW'
+                                value='1'
                                 name='radio1'
                                 checked={this.state.question1 === 'AW'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Community Development'
-                                value='CD'
+                                value='10'
                                 name='radio1'
                                 checked={this.state.question1 === 'CD'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Education'
-                                value='Ed'
+                                value='3'
                                 name='radio1'
                                 checked={this.state.question1 === 'Ed'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Environment'
-                                value='Env'
+                                value='4'
                                 name='radio1'
                                 checked={this.state.question1 === 'Env'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Health and Wellness'
-                                value='HW'
+                                value='5'
                                 name='radio1'
                                 checked={this.state.question1 === 'HW'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Human Services'
-                                value='HS'
+                                value='6'
                                 name='radio1'
                                 checked={this.state.question1 === 'HS'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Research and Public Policy'
-                                value='RPP'
+                                value='11'
                                 name='radio1'
                                 checked={this.state.question1 === 'RPP'}
                                 onChange={this.handleQ1Change}
@@ -107,14 +109,14 @@ class Survey extends Component {
                         <label>I want to help a fundraising only organization.</label>
                             <Form.Radio
                                 label='True'
-                                value='true'
+                                value='TRUE'
                                 name='radio2'
                                 checked={this.state.question2 === 'true'}
                                 onChange={this.handleQ2Change}
                             />
                             <Form.Radio
                                 label='False'
-                                value='false'
+                                value='FALSE'
                                 name='radio2'
                                 checked={this.state.question2 === 'false'}
                                 onChange={this.handleQ2Change}
@@ -148,14 +150,14 @@ class Survey extends Component {
                         <label>I would like an organization that is supported by the government.</label>
                             <Form.Radio
                                 label='True'
-                                value='true'
+                                value='TRUE'
                                 name='radio4'
                                 checked={this.state.question4 === 'true'}
                                 onChange={this.handleQ4Change}
                             />
                             <Form.Radio
                                 label='False'
-                                value='false'
+                                value='FALSE'
                                 name='radio4'
                                 checked={this.state.question4 === 'false'}
                                 onChange={this.handleQ4Change}
