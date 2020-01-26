@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Image } from 'semantic-ui-react'
-import Logo from "../layout/Navbar/ntLogo.png"
 import API from "../../utils/API";
 import Charities from '../../pages/Charities';
 
