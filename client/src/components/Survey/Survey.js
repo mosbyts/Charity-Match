@@ -58,49 +58,49 @@ class Survey extends Component {
                                 label='Animals and Wildlife'
                                 value='1'
                                 name='radio1'
-                                checked={this.state.question1 === 'AW'}
+                                checked={this.state.question1 === '1'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Community Development'
                                 value='10'
                                 name='radio1'
-                                checked={this.state.question1 === 'CD'}
+                                checked={this.state.question1 === '10'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Education'
                                 value='3'
                                 name='radio1'
-                                checked={this.state.question1 === 'Ed'}
+                                checked={this.state.question1 === '3'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Environment'
                                 value='4'
                                 name='radio1'
-                                checked={this.state.question1 === 'Env'}
+                                checked={this.state.question1 === '4'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Health and Wellness'
                                 value='5'
                                 name='radio1'
-                                checked={this.state.question1 === 'HW'}
+                                checked={this.state.question1 === '5'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Human Services'
                                 value='6'
                                 name='radio1'
-                                checked={this.state.question1 === 'HS'}
+                                checked={this.state.question1 === '6'}
                                 onChange={this.handleQ1Change}
                             />
                             <Form.Radio
                                 label='Research and Public Policy'
                                 value='11'
                                 name='radio1'
-                                checked={this.state.question1 === 'RPP'}
+                                checked={this.state.question1 === '11'}
                                 onChange={this.handleQ1Change}
                             />
                     </Form.Field>
@@ -110,14 +110,14 @@ class Survey extends Component {
                                 label='True'
                                 value='TRUE'
                                 name='radio2'
-                                checked={this.state.question2 === 'true'}
+                                checked={this.state.question2 === 'TRUE'}
                                 onChange={this.handleQ2Change}
                             />
                             <Form.Radio
                                 label='False'
                                 value='FALSE'
                                 name='radio2'
-                                checked={this.state.question2 === 'false'}
+                                checked={this.state.question2 === 'FALSE'}
                                 onChange={this.handleQ2Change}
                             />
                     </Form.Field>
@@ -151,14 +151,14 @@ class Survey extends Component {
                                 label='True'
                                 value='TRUE'
                                 name='radio4'
-                                checked={this.state.question4 === 'true'}
+                                checked={this.state.question4 === 'TRUE'}
                                 onChange={this.handleQ4Change}
                             />
                             <Form.Radio
                                 label='False'
                                 value='FALSE'
                                 name='radio4'
-                                checked={this.state.question4 === 'false'}
+                                checked={this.state.question4 === 'FALSE'}
                                 onChange={this.handleQ4Change}
                             />
                     </Form.Field>

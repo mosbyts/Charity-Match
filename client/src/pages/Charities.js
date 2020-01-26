@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid, Segment, Confirm } from 'semantic-ui-react'
 import API from "../utils/API";
 import Footer from "../components/layout/Footer/Footer";
 // import CharityList from "../components/CharityList";
@@ -13,26 +13,49 @@ export default class Charities extends Component {
     charities: [], 
     geocode: [],
     geocodeLat: [],
-    geocodeLong: []
+    geocodeLong: [],
+    open: false,
   }
+
+  //used for setting state of confirm popup
+  // open = () => this.setState({ open: true })
+  // close = () => this.setState({ open: false })
+  // show = () => this.setState({ open: true })
+  // open = () => this.setState({ open: true })
+  // handleConfirm = () => this.setState({ result: true, open: false })
+  // handleCancel = () => this.setState({ result: false, open: false })
+
 
   // When the component mounts, run function
   componentDidMount() {
     window.scrollTo(0 , 0);
+    // this.show();
     this.getCharities();
+    // this.open()
   }
 
-  getCharities = () => {
+  getCharities = (bool) => {
     const userEmail = localStorage.getItem("LoginEmail");
+    const userPrefs = JSON.parse(localStorage.getItem("LoginPrefs"));
 
-    if (userEmail) {
-      console.log("These results are based on your preferences");
-      const userPrefs = localStorage.getItem("LoginPrefs");
+    if (userEmail && userPrefs) {
+      let userConfirm = window.confirm("Would you like to use your preferences?\n\nPress Ok if you do want to use your preferences\nPress Cancel to use a random search")
+      // this.show();
 
-      API.getCharityMatch(userPrefs)
-      .then(res => this.setState({charities: res.data}))
-      .finally(() => {this.getGeoCode()});
+      if (userConfirm) {
+        console.log("These results are based on your preferences");
+
+        API.getCharityMatch(userPrefs)
+        .then(res => this.setState({charities: res.data}))
+        .finally(() => {this.getGeoCode()});
+      } else {
+        console.log("These are random results");
+        API.getRandomCharity()
+        .then(res => this.setState({charities: res.data}))
+        .finally(() => {this.getGeoCode()});
+      }
     } else {
+      console.log("These are random results");
       API.getRandomCharity()
       .then(res => this.setState({charities: res.data}))
       .finally(() => {this.getGeoCode()});
@@ -49,14 +72,23 @@ export default class Charities extends Component {
   };
 
   render(){
+    // const { open } = this.state.open
+
     return(
       <div>
+        {/* <Confirm
+          open={open}
+          cancelButton='Use Random Search'
+          confirmButton="Use Preferences"
+          content='Would you like to use the preferences you set?'
+          onCancel={this.handleCancel}
+          onConfirm={this.handleConfirm}
+        /> */}
         <Navbar />
           <div>
             <div className='parallax'></div>
             <h2 className='center aligned popularCharities'>Popular Charities</h2>
-            <Grid divided='vertically'>
-
+            <Grid divided='vertically'> 
               <Grid.Row columns={3}>
                 <Grid.Column width={2}></Grid.Column>
                 <Grid.Column width={12}>   
