@@ -71,7 +71,7 @@ if(process.env.NODE_ENV === 'production') {
 // });
 const db = require("./config/keys").mongoURI;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGOLAB_WHITE_URI || "mongodb://localhost/Charity_Match");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Charity_Match");
 // mongoose.connect(
 //   db, {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false } 
 // ).then(()=> console.log("connected to mongodb"))
