@@ -12,7 +12,7 @@ export default class About extends Component {
         return(
             <div>
                 <Navbar />
-                    <div className="parallax"></div>
+                    <div className="parallax1"></div>
                     <div className="aboutDiv">
                         <h2 className=" center aligned aboutUs">About Us</h2>
                         <p className='cmInfo'>Charity Match was created to connect potential volunteers and donors to a non-profit based on the person's interests. To begin, create an account and take our simple four question survey. Once the survey is complete, you'll be matched to your most compatible charities.</p>

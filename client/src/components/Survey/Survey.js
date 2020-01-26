@@ -47,8 +47,7 @@ class Survey extends Component {
     const {subQuestion1, subQuestion2, subQuestion3, subQuestion4} = this.state
     return (    
           <div className="container">
-            <h2>Find your charity match!</h2>
-            <h5>Fill out the survey below.</h5>
+            <h5>Fill out the survey below to update your Charity Match preferences.</h5>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                         <label>Which charitable cause are you most interested in supporting?</label>

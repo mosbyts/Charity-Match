@@ -13,7 +13,7 @@ export default class Contact extends Component {
       return (
           <div>
             <Navbar />
-            <div className="parallax"></div>
+            <div className="parallax3"></div>
             <Container className='contactDiv'>
                 <h2 className="center aligned contact">Contact Us</h2>
                     <Grid textAlign='center' columns={3} divided>
