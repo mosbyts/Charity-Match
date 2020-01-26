@@ -69,7 +69,7 @@ if(process.env.NODE_ENV === 'production') {
 // app.get('/secure', authenticationRequired, (req, res) => {
 //   res.json(req.jwt);
 // });
-const db = require("./config/keys").mongoDB_URI;
+const db = require("./config/keys").mongoURI;
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Charity_Match");
 mongoose.connect(
