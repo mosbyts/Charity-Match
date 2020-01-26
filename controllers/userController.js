@@ -5,16 +5,12 @@ const keys = require("../config/keys");
 const passport = require("passport");
 
 // Load User model
-<<<<<<< HEAD
-const db = require("../models");
-=======
 const User = require("../models/User");
->>>>>>> Fixed api's, finally -P
 
 module.exports = {
     create: (req, res) => {
         console.log(req.body)
-        db.User.findOne({ email: req.body.email}).then(user => {
+        User.findOne({ email: req.body.email}).then(user => {
             if (user) {
                 return res.status(400).json({ email: "Email already exists" });
             } else {
@@ -57,7 +53,7 @@ module.exports = {
         const password = req.body.password;
 
         // Find user by email
-        db.User.findOne({ email }).then(user => {
+        User.findOne({ email }).then(user => {
             // Check if user exists
             if (!user) {
                 return res.status(404).json({ emailnotfound: "Email not found" });
