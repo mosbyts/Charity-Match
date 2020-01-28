@@ -28,8 +28,8 @@ Pierre researched MERN stack authentication while Tianna researched front end li
 ## For Developers
 Clone the app locally:
     $ git clone https://github.com/mosbyts/Charity-Match.git
-Browser:
-    localhost:3000
+Browser link:
+    https://localhost:3000
 
 ## Credit
 This version of the app was created by Tianna Mosby and Pierre Randall. For questions, concerns or additional help please contact us on GitHub at mosbyts or VCUPierre.
