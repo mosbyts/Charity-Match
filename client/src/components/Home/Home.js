@@ -70,34 +70,34 @@ export default class Home extends Component {
         <Grid.Row>
           <Grid.Column>
           <ScrollAnimation animateIn='fadeIn'>
-            <a href="https://www.toosmart2start.com"><Image src={HTS2SLogo} className="charityLogo" alt="Henrico Too Smart 2 Start Logo" /></a>
+            <a href="https://www.toosmart2start.com" target="_blank"><Image src={HTS2SLogo} className="charityLogo" alt="Henrico Too Smart 2 Start Logo" /></a>
           </ScrollAnimation>
           </Grid.Column>
           <Grid.Column>
           <ScrollAnimation animateIn='fadeIn' delay={450}>
-            <a href="https://www.rebuildingtogether.org"><Image src={RTLogo} className="charityLogo" alt="Rebuilding Together Logo" /></a>
+            <a href="https://www.rebuildingtogether.org" target="_blank"><Image src={RTLogo} className="charityLogo" alt="Rebuilding Together Logo" /></a>
           </ScrollAnimation>
           </Grid.Column>
           <Grid.Column>
           <ScrollAnimation animateIn='fadeIn' delay={950}>
-            <a href="https://www.savethechildren.org"><Image src={STCLogo} className="charityLogo" alt="Save The Children Logo" /></a>
+            <a href="https://www.savethechildren.org" target="_blank"><Image src={STCLogo} className="charityLogo" alt="Save The Children Logo" /></a>
           </ScrollAnimation>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
           <ScrollAnimation animateIn='fadeIn'>
-            <a href="https://www.rmhc.org/"><Image src={RMHCLogo} className="charityLogo" alt="Ronald McDonald House Charities Logo" /></a>
+            <a href="https://www.rmhc.org/" target="_blank"><Image src={RMHCLogo} className="charityLogo" alt="Ronald McDonald House Charities Logo" /></a>
           </ScrollAnimation>
           </Grid.Column>
           <Grid.Column>
           <ScrollAnimation animateIn='fadeIn' delay={450}>
-            <a href="https://feedmore.org/"><Image src={FMLogo} className="charityLogo" alt="Feed More Logo" /></a>
+            <a href="https://feedmore.org/" target="_blank"><Image src={FMLogo} className="charityLogo" alt="Feed More Logo" /></a>
           </ScrollAnimation>
           </Grid.Column>
           <Grid.Column>
           <ScrollAnimation animateIn='fadeIn' delay={950}>
-            <a href="https://techfortroops.org/"><Image src={TFTLogo} className="charityLogo" alt="Tech For Troops Logo" /></a>
+            <a href="https://techfortroops.org/" target="_blank"><Image src={TFTLogo} className="charityLogo" alt="Tech For Troops Logo" /></a>
           </ScrollAnimation>
           </Grid.Column>
         </Grid.Row>
