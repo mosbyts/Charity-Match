@@ -25,7 +25,7 @@ class Dashboard extends Component {
             <p className="center aligned">You now have access to tons of charities that suit your interests.</p>
             <Survey />
             <p className="center aligned">We hope you enjoyed Charity Match!</p>
-            <Button primary onClick={this.onLogoutClick} className="center aligned">
+            <Button primary onClick={this.onLogoutClick} className="d-flex">
               Logout
             </Button>
         <Footer />

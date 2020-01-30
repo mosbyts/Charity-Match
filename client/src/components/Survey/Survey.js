@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
+import { Form, Button } from 'semantic-ui-react';
 import API from '../../utils/API';
+import Charities from '../../pages/Charities'
 
 class Survey extends Component {
     state = {
@@ -163,8 +165,13 @@ class Survey extends Component {
                             />
                     </Form.Field>
                     <Form.Button>Submit</Form.Button>
+                    <Link to="/Charities" component={Charities}>
+                        <Button className="center aligned">
+                            Check Out Charities Now!
+                        </Button>
+                    </Link>
                 </Form>
-                <pre>{JSON.stringify({ subQuestion1, subQuestion2, subQuestion3, subQuestion4 }, null, 2)}</pre>
+                {/* <pre>{JSON.stringify({ subQuestion1, subQuestion2, subQuestion3, subQuestion4 }, null, 2)}</pre> */}
           </div>
     )}
 }
